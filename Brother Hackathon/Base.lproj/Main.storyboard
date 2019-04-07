@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina6_1" orientation="portrait">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="US3-pA-Wdw">
+    <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -10,34 +10,40 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Home-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Brother_Hackathon" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="-300" translatesAutoresizingMaskIntoConstraints="NO" id="du1-7Q-HWD">
-                                <rect key="frame" x="16" y="60" width="382" height="786"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalCentering" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="du1-7Q-HWD">
+                                <rect key="frame" x="152" y="256" width="71" height="300"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SMm-l1-1vS">
-                                        <rect key="frame" x="0.0" y="0.0" width="382" height="421.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="71" height="51"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                         <state key="normal" title="Train"/>
+                                        <connections>
+                                            <segue destination="3dA-Ew-wDv" kind="show" identifier="TrainCameraSegue" id="Avz-fs-SPw"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pKz-tm-DdH">
-                                        <rect key="frame" x="0.0" y="121.5" width="382" height="421.5"/>
+                                        <rect key="frame" x="0.0" y="83" width="71" height="51"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                         <state key="normal" title="Snap"/>
+                                        <connections>
+                                            <segue destination="3dA-Ew-wDv" kind="show" id="8Xc-aR-Xil"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9dB-vx-icj">
-                                        <rect key="frame" x="0.0" y="243" width="382" height="421.5"/>
+                                        <rect key="frame" x="0.0" y="166" width="71" height="51"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                         <state key="normal" title="Print"/>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DUA-EQ-9zj">
-                                        <rect key="frame" x="0.0" y="364.5" width="382" height="421.5"/>
+                                        <rect key="frame" x="0.0" y="249" width="71" height="51"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                         <state key="normal" title="Edit"/>
                                     </button>
@@ -46,16 +52,121 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="du1-7Q-HWD" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="azN-yy-lcK"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="du1-7Q-HWD" secondAttribute="trailing" constant="16" id="ffX-HB-rra"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="du1-7Q-HWD" secondAttribute="bottom" constant="16" id="lH9-Qr-Vdc"/>
-                            <constraint firstItem="du1-7Q-HWD" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="vE7-9A-beg"/>
+                            <constraint firstItem="du1-7Q-HWD" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="GW8-7R-NRN"/>
+                            <constraint firstItem="du1-7Q-HWD" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="r38-qd-Ees"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Home" id="pHl-nq-EXB"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="983.20000000000005" y="20.689655172413794"/>
+        </scene>
+        <!--Train-->
+        <scene sceneID="O5f-Bf-qu9">
+            <objects>
+                <viewController title="Train" id="3dA-Ew-wDv" customClass="TrainCameraViewController" customModule="Brother_Hackathon" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="MJC-u7-c75">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rQq-dt-3SG">
+                                <rect key="frame" x="0.0" y="88" width="375" height="724"/>
+                                <subviews>
+                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="duU-Q4-eNR">
+                                        <rect key="frame" x="157" y="622" width="60" height="60"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="60" id="IWp-au-cLc"/>
+                                            <constraint firstAttribute="height" constant="60" id="dZF-HF-ca8"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="30"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="takePictureButton:" destination="3dA-Ew-wDv" eventType="touchUpInside" id="alQ-BU-l0h"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="duU-Q4-eNR" secondAttribute="bottom" constant="42" id="KBo-gE-LiQ"/>
+                                    <constraint firstAttribute="trailing" secondItem="duU-Q4-eNR" secondAttribute="trailing" constant="158" id="l1X-yr-Pj2"/>
+                                    <constraint firstItem="duU-Q4-eNR" firstAttribute="leading" secondItem="rQq-dt-3SG" secondAttribute="leading" constant="157" id="oje-3h-3LH"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="rQq-dt-3SG" secondAttribute="bottom" id="GwK-OL-J1w"/>
+                            <constraint firstItem="rQq-dt-3SG" firstAttribute="trailing" secondItem="dif-7V-NXZ" secondAttribute="trailing" id="LsU-nN-Rgb"/>
+                            <constraint firstItem="rQq-dt-3SG" firstAttribute="top" secondItem="dif-7V-NXZ" secondAttribute="top" id="Say-7Z-Jpc"/>
+                            <constraint firstItem="rQq-dt-3SG" firstAttribute="leading" secondItem="dif-7V-NXZ" secondAttribute="leading" id="gTP-xf-UO5"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="dif-7V-NXZ"/>
+                    </view>
+                    <connections>
+                        <outlet property="cameraView" destination="rQq-dt-3SG" id="PsN-OI-Dhj"/>
+                        <outlet property="takePictureButton" destination="duU-Q4-eNR" id="bUP-qJ-FFc"/>
+                        <segue destination="Bfo-5i-5oZ" kind="show" identifier="PreviewPictureSegue" id="NG2-1K-Mse"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="s4s-wL-fXo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2076" y="-225"/>
+        </scene>
+        <!--Train Preview View Controller-->
+        <scene sceneID="08p-YF-1x3">
+            <objects>
+                <viewController id="Bfo-5i-5oZ" customClass="TrainPreviewViewController" customModule="Brother_Hackathon" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Wco-DN-JJn">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tTh-Xz-jB0">
+                                <rect key="frame" x="0.0" y="88" width="375" height="690"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="tTh-Xz-jB0" firstAttribute="leading" secondItem="hL3-00-ISq" secondAttribute="leading" id="6qM-Yy-gRp"/>
+                            <constraint firstItem="tTh-Xz-jB0" firstAttribute="trailing" secondItem="hL3-00-ISq" secondAttribute="trailing" id="JNg-Fa-daV"/>
+                            <constraint firstItem="tTh-Xz-jB0" firstAttribute="top" secondItem="hL3-00-ISq" secondAttribute="top" id="TC1-yZ-eyr"/>
+                            <constraint firstItem="tTh-Xz-jB0" firstAttribute="bottom" secondItem="hL3-00-ISq" secondAttribute="bottom" id="atx-ZT-qkR"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="hL3-00-ISq"/>
+                    </view>
+                    <connections>
+                        <outlet property="takenPictureImageView" destination="tTh-Xz-jB0" id="gjY-ph-tJW"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vuu-aW-iYd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2812" y="-226"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="hY4-f8-8JX">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="US3-pA-Wdw" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="KsM-o5-tJN">
+                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="dym-GZ-bE8"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Arw-U6-YqX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="86" y="21"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="Avz-fs-SPw"/>
+    </inferredMetricsTieBreakers>
 </document>

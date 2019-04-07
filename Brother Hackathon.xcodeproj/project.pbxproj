@@ -13,6 +13,8 @@
 		9613939C2259901F00027D93 /* Brother_Hackathon.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9613939A2259901F00027D93 /* Brother_Hackathon.xcdatamodeld */; };
 		9613939E2259902100027D93 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9613939D2259902100027D93 /* Assets.xcassets */; };
 		961393A12259902100027D93 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9613939F2259902100027D93 /* LaunchScreen.storyboard */; };
+		961393AA2259973D00027D93 /* TrainCameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961393A92259973D00027D93 /* TrainCameraViewController.swift */; };
+		961393AD22599CFA00027D93 /* TrainPreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961393AC22599CFA00027D93 /* TrainPreviewViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		9613939D2259902100027D93 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		961393A02259902100027D93 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		961393A22259902100027D93 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		961393A92259973D00027D93 /* TrainCameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainCameraViewController.swift; sourceTree = "<group>"; };
+		961393AC22599CFA00027D93 /* TrainPreviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainPreviewViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +60,33 @@
 		961393922259901F00027D93 /* Brother Hackathon */ = {
 			isa = PBXGroup;
 			children = (
-				961393932259901F00027D93 /* AppDelegate.swift */,
-				961393952259901F00027D93 /* ViewController.swift */,
-				961393972259901F00027D93 /* Main.storyboard */,
 				9613939D2259902100027D93 /* Assets.xcassets */,
+				961393932259901F00027D93 /* AppDelegate.swift */,
+				961393972259901F00027D93 /* Main.storyboard */,
 				9613939F2259902100027D93 /* LaunchScreen.storyboard */,
-				961393A22259902100027D93 /* Info.plist */,
 				9613939A2259901F00027D93 /* Brother_Hackathon.xcdatamodeld */,
+				961393A22259902100027D93 /* Info.plist */,
+				961393AB2259981200027D93 /* Home */,
+				961393A82259938800027D93 /* Train */,
 			);
 			path = "Brother Hackathon";
+			sourceTree = "<group>";
+		};
+		961393A82259938800027D93 /* Train */ = {
+			isa = PBXGroup;
+			children = (
+				961393A92259973D00027D93 /* TrainCameraViewController.swift */,
+				961393AC22599CFA00027D93 /* TrainPreviewViewController.swift */,
+			);
+			path = Train;
+			sourceTree = "<group>";
+		};
+		961393AB2259981200027D93 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				961393952259901F00027D93 /* ViewController.swift */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,6 +160,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				961393AA2259973D00027D93 /* TrainCameraViewController.swift in Sources */,
+				961393AD22599CFA00027D93 /* TrainPreviewViewController.swift in Sources */,
 				961393962259901F00027D93 /* ViewController.swift in Sources */,
 				961393942259901F00027D93 /* AppDelegate.swift in Sources */,
 				9613939C2259901F00027D93 /* Brother_Hackathon.xcdatamodeld in Sources */,
