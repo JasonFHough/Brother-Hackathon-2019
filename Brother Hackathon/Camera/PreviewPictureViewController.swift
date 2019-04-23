@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TrainPreviewViewController: UIViewController {
+class PreviewPictureViewController: UIViewController {
 
     @IBOutlet weak var takenPictureImageView: UIImageView!
     var takenPicture: UIImage!    // Assigned through TrainCameraVC's prepare

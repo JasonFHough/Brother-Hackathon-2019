@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="US3-pA-Wdw">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="rbo-eo-Ndl">
     <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -10,92 +10,68 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Home-->
-        <scene sceneID="tne-QT-ifu">
-            <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Brother_Hackathon" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalCentering" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="du1-7Q-HWD">
-                                <rect key="frame" x="152" y="256" width="71" height="300"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SMm-l1-1vS">
-                                        <rect key="frame" x="0.0" y="0.0" width="71" height="51"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="32"/>
-                                        <state key="normal" title="Train"/>
-                                        <connections>
-                                            <segue destination="3dA-Ew-wDv" kind="show" identifier="TrainCameraSegue" id="Avz-fs-SPw"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pKz-tm-DdH">
-                                        <rect key="frame" x="0.0" y="83" width="71" height="51"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="32"/>
-                                        <state key="normal" title="Snap"/>
-                                        <connections>
-                                            <segue destination="3dA-Ew-wDv" kind="show" id="8Xc-aR-Xil"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9dB-vx-icj">
-                                        <rect key="frame" x="0.0" y="166" width="71" height="51"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="32"/>
-                                        <state key="normal" title="Print"/>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DUA-EQ-9zj">
-                                        <rect key="frame" x="0.0" y="249" width="71" height="51"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="32"/>
-                                        <state key="normal" title="Edit"/>
-                                    </button>
-                                </subviews>
-                            </stackView>
-                        </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="du1-7Q-HWD" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="GW8-7R-NRN"/>
-                            <constraint firstItem="du1-7Q-HWD" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="r38-qd-Ees"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="Home" id="pHl-nq-EXB"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="983.20000000000005" y="20.689655172413794"/>
-        </scene>
-        <!--Train-->
+        <!--Camera View Controller-->
         <scene sceneID="O5f-Bf-qu9">
             <objects>
-                <viewController title="Train" id="3dA-Ew-wDv" customClass="TrainCameraViewController" customModule="Brother_Hackathon" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="3dA-Ew-wDv" customClass="CameraViewController" customModule="Brother_Hackathon" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="MJC-u7-c75">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rQq-dt-3SG">
-                                <rect key="frame" x="0.0" y="88" width="375" height="724"/>
+                                <rect key="frame" x="0.0" y="44" width="375" height="768"/>
                                 <subviews>
-                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="duU-Q4-eNR">
-                                        <rect key="frame" x="157" y="622" width="60" height="60"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="60" id="IWp-au-cLc"/>
-                                            <constraint firstAttribute="height" constant="60" id="dZF-HF-ca8"/>
-                                        </constraints>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                <integer key="value" value="30"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                        <connections>
-                                            <action selector="takePictureButton:" destination="3dA-Ew-wDv" eventType="touchUpInside" id="alQ-BU-l0h"/>
-                                        </connections>
-                                    </button>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="gSx-mG-e8k">
+                                        <rect key="frame" x="16" y="666" width="343" height="60"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Epg-DQ-4aZ">
+                                                <rect key="frame" x="0.0" y="15" width="30" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="30" id="Yyr-c6-YR6"/>
+                                                    <constraint firstAttribute="height" constant="30" id="nKd-wO-pHS"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                                <state key="normal" title="&amp;">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                            </button>
+                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="duU-Q4-eNR">
+                                                <rect key="frame" x="141.66666666666666" y="0.0" width="60" height="60"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="60" id="IWp-au-cLc"/>
+                                                    <constraint firstAttribute="height" constant="60" id="dZF-HF-ca8"/>
+                                                </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="30"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="takePictureButton:" destination="3dA-Ew-wDv" eventType="touchUpInside" id="alQ-BU-l0h"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A8U-cB-ain">
+                                                <rect key="frame" x="313" y="15" width="30" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="30" id="GS4-4h-xPd"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                                <state key="normal" title=":::">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <segue destination="ftr-bC-aCr" kind="show" id="zNp-g2-zyf"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="duU-Q4-eNR" secondAttribute="bottom" constant="42" id="KBo-gE-LiQ"/>
-                                    <constraint firstAttribute="trailing" secondItem="duU-Q4-eNR" secondAttribute="trailing" constant="158" id="l1X-yr-Pj2"/>
-                                    <constraint firstItem="duU-Q4-eNR" firstAttribute="leading" secondItem="rQq-dt-3SG" secondAttribute="leading" constant="157" id="oje-3h-3LH"/>
+                                    <constraint firstItem="gSx-mG-e8k" firstAttribute="leading" secondItem="rQq-dt-3SG" secondAttribute="leading" constant="16" id="p16-bs-Qag"/>
+                                    <constraint firstAttribute="trailing" secondItem="gSx-mG-e8k" secondAttribute="trailing" constant="16" id="w8a-UY-ikB"/>
+                                    <constraint firstAttribute="bottom" secondItem="gSx-mG-e8k" secondAttribute="bottom" constant="42" id="zZQ-UO-5Ie"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -108,6 +84,8 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="dif-7V-NXZ"/>
                     </view>
+                    <navigationItem key="navigationItem" id="gSI-LX-dLC"/>
+                    <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="cameraView" destination="rQq-dt-3SG" id="PsN-OI-Dhj"/>
                         <outlet property="takePictureButton" destination="duU-Q4-eNR" id="bUP-qJ-FFc"/>
@@ -116,12 +94,83 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="s4s-wL-fXo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2076" y="-225"/>
+            <point key="canvasLocation" x="2870" y="-225"/>
         </scene>
-        <!--Train Preview View Controller-->
+        <!--Food List Table View Controller-->
+        <scene sceneID="GVs-pU-xnM">
+            <objects>
+                <tableViewController id="ftr-bC-aCr" customClass="FoodListTableViewController" customModule="Brother_Hackathon" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="DSg-24-FLH">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="FoodCell" rowHeight="63" id="Ilc-y2-LH7" customClass="FoodTableViewCell" customModule="Brother_Hackathon" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="63"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Ilc-y2-LH7" id="E2i-5b-2rn">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="62.666666666666664"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Food Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WEZ-9y-MnB">
+                                            <rect key="frame" x="74" y="21" width="239" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zjL-CK-wRX">
+                                            <rect key="frame" x="321" y="16" width="30" height="30"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="30" id="n4D-ZZ-XWj"/>
+                                                <constraint firstAttribute="height" constant="30" id="qzc-E4-5zD"/>
+                                            </constraints>
+                                            <state key="normal" title="P"/>
+                                            <connections>
+                                                <action selector="printButton:" destination="Ilc-y2-LH7" eventType="touchUpInside" id="WRI-Pa-9gO"/>
+                                            </connections>
+                                        </button>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="imc-TL-zdY">
+                                            <rect key="frame" x="16" y="6" width="50" height="50"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="50" id="MVf-av-FdQ"/>
+                                                <constraint firstAttribute="width" constant="50" id="dqb-xB-Gkc"/>
+                                            </constraints>
+                                        </imageView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="zjL-CK-wRX" firstAttribute="leading" secondItem="WEZ-9y-MnB" secondAttribute="trailing" constant="8" id="0HT-IY-uvp"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="WEZ-9y-MnB" secondAttribute="bottom" constant="10" id="6i0-G6-TKj"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="zjL-CK-wRX" secondAttribute="bottom" constant="6" id="9D6-dK-0wI"/>
+                                        <constraint firstItem="zjL-CK-wRX" firstAttribute="top" secondItem="E2i-5b-2rn" secondAttribute="topMargin" constant="5" id="IGp-An-wC6"/>
+                                        <constraint firstAttribute="bottom" secondItem="imc-TL-zdY" secondAttribute="bottom" constant="6.6666666666666643" id="Ldh-S7-bFw"/>
+                                        <constraint firstItem="WEZ-9y-MnB" firstAttribute="top" secondItem="E2i-5b-2rn" secondAttribute="topMargin" constant="10" id="NHW-W3-VVW"/>
+                                        <constraint firstItem="imc-TL-zdY" firstAttribute="leading" secondItem="E2i-5b-2rn" secondAttribute="leading" constant="16" id="VxM-8E-HHa"/>
+                                        <constraint firstItem="WEZ-9y-MnB" firstAttribute="leading" secondItem="imc-TL-zdY" secondAttribute="trailing" constant="8" id="YQX-Qb-IJf"/>
+                                        <constraint firstItem="imc-TL-zdY" firstAttribute="top" secondItem="E2i-5b-2rn" secondAttribute="top" constant="6" id="eSH-wo-kHC"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="zjL-CK-wRX" secondAttribute="trailing" constant="8" id="jTT-Pr-HGy"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="foodImageView" destination="imc-TL-zdY" id="ggc-7E-G9h"/>
+                                    <outlet property="foodTitleLabel" destination="WEZ-9y-MnB" id="9sx-oJ-MN9"/>
+                                    <outlet property="printButton" destination="zjL-CK-wRX" id="e4e-k4-GOn"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="ftr-bC-aCr" id="l40-vC-h6B"/>
+                            <outlet property="delegate" destination="ftr-bC-aCr" id="nyU-ox-tgM"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="13t-Bo-xHe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3740" y="-225.36945812807883"/>
+        </scene>
+        <!--Preview Picture View Controller-->
         <scene sceneID="08p-YF-1x3">
             <objects>
-                <viewController id="Bfo-5i-5oZ" customClass="TrainPreviewViewController" customModule="Brother_Hackathon" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Bfo-5i-5oZ" customClass="PreviewPictureViewController" customModule="Brother_Hackathon" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Wco-DN-JJn">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -139,34 +188,32 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="hL3-00-ISq"/>
                     </view>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="takenPictureImageView" destination="tTh-Xz-jB0" id="gjY-ph-tJW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vuu-aW-iYd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2812" y="-226"/>
+            <point key="canvasLocation" x="3740" y="-1088"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="hY4-f8-8JX">
+        <scene sceneID="hh0-o7-Hcj">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="US3-pA-Wdw" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="rbo-eo-Ndl" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="KsM-o5-tJN">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Xds-cr-kmE">
                         <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="dym-GZ-bE8"/>
+                        <segue destination="3dA-Ew-wDv" kind="relationship" relationship="rootViewController" id="Cha-tr-kKf"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Arw-U6-YqX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UdE-Ho-YYh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="86" y="21"/>
+            <point key="canvasLocation" x="2870" y="-1088"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="Avz-fs-SPw"/>
-    </inferredMetricsTieBreakers>
 </document>

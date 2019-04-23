@@ -9,7 +9,7 @@
 import UIKit
 import AVFoundation
 
-class TrainCameraViewController: UIViewController, AVCapturePhotoCaptureDelegate {
+class CameraViewController: UIViewController, AVCapturePhotoCaptureDelegate {
     
     @IBOutlet weak var cameraView: UIView!
     @IBOutlet weak var takePictureButton: UIButton!
@@ -32,7 +32,7 @@ class TrainCameraViewController: UIViewController, AVCapturePhotoCaptureDelegate
         case "PreviewPictureSegue":
             
             // Pass takenPicture
-            guard let previewVC = segue.destination as? TrainPreviewViewController else { return }
+            guard let previewVC = segue.destination as? PreviewPictureViewController else { return }
             previewVC.takenPicture = self.takenPicture
         default:
             return
@@ -81,8 +81,16 @@ class TrainCameraViewController: UIViewController, AVCapturePhotoCaptureDelegate
     func photoOutput(_ output: AVCapturePhotoOutput, didFinishProcessingPhoto photo: AVCapturePhoto, error: Error?) {
         if let imageData = photo.fileDataRepresentation() {
             takenPicture = UIImage(data: imageData)
+            
+            let base64String = imageData.base64EncodedString()
+            sendPOST(base64String)
+            
             performSegue(withIdentifier: "PreviewPictureSegue", sender: nil)
         }
+    }
+    
+    func sendPOST(_ base64String: String) {
+        // SEND POST
     }
     
 }
