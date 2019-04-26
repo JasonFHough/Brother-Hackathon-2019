@@ -94,7 +94,7 @@
                 <viewControllerPlaceholder storyboardName="PrintFoodTableView" id="20N-i0-p2u" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xzs-hX-NP1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3632" y="20"/>
+            <point key="canvasLocation" x="3673" y="-225"/>
         </scene>
     </scenes>
     <resources>

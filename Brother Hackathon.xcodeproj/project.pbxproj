@@ -15,6 +15,9 @@
 		961393AA2259973D00027D93 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961393A92259973D00027D93 /* CameraViewController.swift */; };
 		968ED89A227394BF0042A266 /* PrintFoodTableView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 968ED899227394BF0042A266 /* PrintFoodTableView.storyboard */; };
 		968ED89D2273951F0042A266 /* NavigationView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 968ED89C2273951F0042A266 /* NavigationView.storyboard */; };
+		968ED8A02273A02C0042A266 /* PrintPopupView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 968ED89F2273A02C0042A266 /* PrintPopupView.storyboard */; };
+		968ED8A22273B0360042A266 /* PrintPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 968ED8A12273B0360042A266 /* PrintPopupViewController.swift */; };
+		968ED8A42273B38B0042A266 /* topBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 968ED8A32273B38B0042A266 /* topBarViewController.swift */; };
 		96AB4220226D7579007F02D2 /* FoodListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AB421F226D7579007F02D2 /* FoodListTableViewController.swift */; };
 		96AB4222226D761F007F02D2 /* FoodTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AB4221226D761F007F02D2 /* FoodTableViewCell.swift */; };
 /* End PBXBuildFile section */
@@ -30,6 +33,9 @@
 		961393A92259973D00027D93 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		968ED899227394BF0042A266 /* PrintFoodTableView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PrintFoodTableView.storyboard; sourceTree = "<group>"; };
 		968ED89C2273951F0042A266 /* NavigationView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NavigationView.storyboard; sourceTree = "<group>"; };
+		968ED89F2273A02C0042A266 /* PrintPopupView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PrintPopupView.storyboard; sourceTree = "<group>"; };
+		968ED8A12273B0360042A266 /* PrintPopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrintPopupViewController.swift; sourceTree = "<group>"; };
+		968ED8A32273B38B0042A266 /* topBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = topBarViewController.swift; sourceTree = "<group>"; };
 		96AB421F226D7579007F02D2 /* FoodListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodListTableViewController.swift; sourceTree = "<group>"; };
 		96AB4221226D761F007F02D2 /* FoodTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -72,6 +78,7 @@
 				968ED89B227394F00042A266 /* NavigationView */,
 				961393A82259938800027D93 /* MainCameraView */,
 				96AB421E226D753B007F02D2 /* PrintFoodTableView */,
+				968ED89E2273A0130042A266 /* PrintPopupView */,
 			);
 			path = "Brother Hackathon";
 			sourceTree = "<group>";
@@ -91,6 +98,16 @@
 				968ED89C2273951F0042A266 /* NavigationView.storyboard */,
 			);
 			path = NavigationView;
+			sourceTree = "<group>";
+		};
+		968ED89E2273A0130042A266 /* PrintPopupView */ = {
+			isa = PBXGroup;
+			children = (
+				968ED89F2273A02C0042A266 /* PrintPopupView.storyboard */,
+				968ED8A12273B0360042A266 /* PrintPopupViewController.swift */,
+				968ED8A32273B38B0042A266 /* topBarViewController.swift */,
+			);
+			path = PrintPopupView;
 			sourceTree = "<group>";
 		};
 		96AB421E226D753B007F02D2 /* PrintFoodTableView */ = {
@@ -163,6 +180,7 @@
 			files = (
 				968ED89A227394BF0042A266 /* PrintFoodTableView.storyboard in Resources */,
 				961393A12259902100027D93 /* LaunchScreen.storyboard in Resources */,
+				968ED8A02273A02C0042A266 /* PrintPopupView.storyboard in Resources */,
 				9613939E2259902100027D93 /* Assets.xcassets in Resources */,
 				968ED89D2273951F0042A266 /* NavigationView.storyboard in Resources */,
 				961393992259901F00027D93 /* Main.storyboard in Resources */,
@@ -177,7 +195,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				961393AA2259973D00027D93 /* CameraViewController.swift in Sources */,
+				968ED8A22273B0360042A266 /* PrintPopupViewController.swift in Sources */,
 				96AB4220226D7579007F02D2 /* FoodListTableViewController.swift in Sources */,
+				968ED8A42273B38B0042A266 /* topBarViewController.swift in Sources */,
 				961393942259901F00027D93 /* AppDelegate.swift in Sources */,
 				9613939C2259901F00027D93 /* Brother_Hackathon.xcdatamodeld in Sources */,
 				96AB4222226D761F007F02D2 /* FoodTableViewCell.swift in Sources */,
