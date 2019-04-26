@@ -13,7 +13,8 @@
 		9613939E2259902100027D93 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9613939D2259902100027D93 /* Assets.xcassets */; };
 		961393A12259902100027D93 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9613939F2259902100027D93 /* LaunchScreen.storyboard */; };
 		961393AA2259973D00027D93 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961393A92259973D00027D93 /* CameraViewController.swift */; };
-		961393AD22599CFA00027D93 /* PreviewPictureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961393AC22599CFA00027D93 /* PreviewPictureViewController.swift */; };
+		968ED89A227394BF0042A266 /* PrintFoodTableView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 968ED899227394BF0042A266 /* PrintFoodTableView.storyboard */; };
+		968ED89D2273951F0042A266 /* NavigationView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 968ED89C2273951F0042A266 /* NavigationView.storyboard */; };
 		96AB4220226D7579007F02D2 /* FoodListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AB421F226D7579007F02D2 /* FoodListTableViewController.swift */; };
 		96AB4222226D761F007F02D2 /* FoodTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AB4221226D761F007F02D2 /* FoodTableViewCell.swift */; };
 /* End PBXBuildFile section */
@@ -27,7 +28,8 @@
 		961393A02259902100027D93 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		961393A22259902100027D93 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		961393A92259973D00027D93 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
-		961393AC22599CFA00027D93 /* PreviewPictureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewPictureViewController.swift; sourceTree = "<group>"; };
+		968ED899227394BF0042A266 /* PrintFoodTableView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PrintFoodTableView.storyboard; sourceTree = "<group>"; };
+		968ED89C2273951F0042A266 /* NavigationView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NavigationView.storyboard; sourceTree = "<group>"; };
 		96AB421F226D7579007F02D2 /* FoodListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodListTableViewController.swift; sourceTree = "<group>"; };
 		96AB4221226D761F007F02D2 /* FoodTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -64,32 +66,41 @@
 			children = (
 				9613939D2259902100027D93 /* Assets.xcassets */,
 				961393932259901F00027D93 /* AppDelegate.swift */,
-				961393972259901F00027D93 /* Main.storyboard */,
 				9613939F2259902100027D93 /* LaunchScreen.storyboard */,
 				9613939A2259901F00027D93 /* Brother_Hackathon.xcdatamodeld */,
 				961393A22259902100027D93 /* Info.plist */,
-				961393A82259938800027D93 /* Camera */,
-				96AB421E226D753B007F02D2 /* FoodList */,
+				968ED89B227394F00042A266 /* NavigationView */,
+				961393A82259938800027D93 /* MainCameraView */,
+				96AB421E226D753B007F02D2 /* PrintFoodTableView */,
 			);
 			path = "Brother Hackathon";
 			sourceTree = "<group>";
 		};
-		961393A82259938800027D93 /* Camera */ = {
+		961393A82259938800027D93 /* MainCameraView */ = {
 			isa = PBXGroup;
 			children = (
+				961393972259901F00027D93 /* Main.storyboard */,
 				961393A92259973D00027D93 /* CameraViewController.swift */,
-				961393AC22599CFA00027D93 /* PreviewPictureViewController.swift */,
 			);
-			path = Camera;
+			path = MainCameraView;
 			sourceTree = "<group>";
 		};
-		96AB421E226D753B007F02D2 /* FoodList */ = {
+		968ED89B227394F00042A266 /* NavigationView */ = {
 			isa = PBXGroup;
 			children = (
+				968ED89C2273951F0042A266 /* NavigationView.storyboard */,
+			);
+			path = NavigationView;
+			sourceTree = "<group>";
+		};
+		96AB421E226D753B007F02D2 /* PrintFoodTableView */ = {
+			isa = PBXGroup;
+			children = (
+				968ED899227394BF0042A266 /* PrintFoodTableView.storyboard */,
 				96AB421F226D7579007F02D2 /* FoodListTableViewController.swift */,
 				96AB4221226D761F007F02D2 /* FoodTableViewCell.swift */,
 			);
-			path = FoodList;
+			path = PrintFoodTableView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -150,8 +161,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				968ED89A227394BF0042A266 /* PrintFoodTableView.storyboard in Resources */,
 				961393A12259902100027D93 /* LaunchScreen.storyboard in Resources */,
 				9613939E2259902100027D93 /* Assets.xcassets in Resources */,
+				968ED89D2273951F0042A266 /* NavigationView.storyboard in Resources */,
 				961393992259901F00027D93 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -165,7 +178,6 @@
 			files = (
 				961393AA2259973D00027D93 /* CameraViewController.swift in Sources */,
 				96AB4220226D7579007F02D2 /* FoodListTableViewController.swift in Sources */,
-				961393AD22599CFA00027D93 /* PreviewPictureViewController.swift in Sources */,
 				961393942259901F00027D93 /* AppDelegate.swift in Sources */,
 				9613939C2259901F00027D93 /* Brother_Hackathon.xcdatamodeld in Sources */,
 				96AB4222226D761F007F02D2 /* FoodTableViewCell.swift in Sources */,

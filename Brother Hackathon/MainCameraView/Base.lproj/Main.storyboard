@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="3dA-Ew-wDv">
+    <device id="retina5_9" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Camera View Controller-->
+        <scene sceneID="O5f-Bf-qu9">
+            <objects>
+                <viewController id="3dA-Ew-wDv" customClass="CameraViewController" customModule="Brother_Hackathon" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="MJC-u7-c75">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rQq-dt-3SG">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="bottom" spacing="71" translatesAutoresizingMaskIntoConstraints="NO" id="7FQ-Eh-RVp">
+                                        <rect key="frame" x="16" y="629" width="343" height="141"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Epg-DQ-4aZ" userLabel="Menu">
+                                                <rect key="frame" x="0.0" y="111" width="30" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="30" id="Yyr-c6-YR6"/>
+                                                    <constraint firstAttribute="height" constant="30" id="nKd-wO-pHS"/>
+                                                </constraints>
+                                                <state key="normal" image="Menu">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                            </button>
+                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="duU-Q4-eNR">
+                                                <rect key="frame" x="101" y="0.0" width="141" height="141"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="duU-Q4-eNR" secondAttribute="height" multiplier="1:1" id="5OQ-OZ-AZ0"/>
+                                                </constraints>
+                                                <state key="normal" image="Capture Button"/>
+                                                <connections>
+                                                    <action selector="takePictureButton:" destination="3dA-Ew-wDv" eventType="touchUpInside" id="alQ-BU-l0h"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A8U-cB-ain" userLabel="Print">
+                                                <rect key="frame" x="313" y="111" width="30" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="30" id="9n6-UY-OZM"/>
+                                                    <constraint firstAttribute="height" constant="30" id="GS4-4h-xPd"/>
+                                                </constraints>
+                                                <state key="normal" image="Print">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <segue destination="20N-i0-p2u" kind="show" id="gLV-m1-fk8"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="7FQ-Eh-RVp" firstAttribute="leading" secondItem="rQq-dt-3SG" secondAttribute="leading" constant="16" id="0a9-a9-K2l"/>
+                                    <constraint firstAttribute="bottom" secondItem="7FQ-Eh-RVp" secondAttribute="bottom" constant="42" id="1iR-bp-nYB"/>
+                                    <constraint firstAttribute="trailing" secondItem="7FQ-Eh-RVp" secondAttribute="trailing" constant="16" id="EiT-1R-Nn9"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="rQq-dt-3SG" firstAttribute="top" secondItem="MJC-u7-c75" secondAttribute="top" id="9gK-JI-SSF"/>
+                            <constraint firstAttribute="bottom" secondItem="rQq-dt-3SG" secondAttribute="bottom" id="GwK-OL-J1w"/>
+                            <constraint firstItem="rQq-dt-3SG" firstAttribute="trailing" secondItem="dif-7V-NXZ" secondAttribute="trailing" id="LsU-nN-Rgb"/>
+                            <constraint firstItem="rQq-dt-3SG" firstAttribute="leading" secondItem="dif-7V-NXZ" secondAttribute="leading" id="gTP-xf-UO5"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="dif-7V-NXZ"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="gSI-LX-dLC"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <connections>
+                        <outlet property="cameraView" destination="rQq-dt-3SG" id="PsN-OI-Dhj"/>
+                        <outlet property="takePictureButton" destination="duU-Q4-eNR" id="bUP-qJ-FFc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="s4s-wL-fXo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2869.5999999999999" y="-225.36945812807883"/>
+        </scene>
+        <!--PrintFoodTableView-->
+        <scene sceneID="Lai-Ne-WJm">
+            <objects>
+                <viewControllerPlaceholder storyboardName="PrintFoodTableView" id="20N-i0-p2u" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Xzs-hX-NP1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3632" y="20"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Capture Button" width="141" height="141"/>
+        <image name="Menu" width="27.333333969116211" height="29"/>
+        <image name="Print" width="29" height="29"/>
+    </resources>
+</document>

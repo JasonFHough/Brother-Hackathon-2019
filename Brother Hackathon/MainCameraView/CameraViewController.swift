@@ -14,35 +14,22 @@ class CameraViewController: UIViewController, AVCapturePhotoCaptureDelegate {
     @IBOutlet weak var cameraView: UIView!
     @IBOutlet weak var takePictureButton: UIButton!
     
-    var takenPicture: UIImage?
     var photoOutput: AVCapturePhotoOutput?
+    var takenPicture: UIImage?
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        takePictureButton.isEnabled = true
+        navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.setNavigationBarHidden(false, animated: animated)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupCamera()
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        switch segue.identifier {
-        case "PreviewPictureSegue":
-            
-            // Pass takenPicture
-            guard let previewVC = segue.destination as? PreviewPictureViewController else { return }
-            previewVC.takenPicture = self.takenPicture
-        default:
-            return
-        }
-    }
-    
-    @IBAction func takePictureButton(_ sender: UIButton) {
-        let settings = AVCapturePhotoSettings()
-        photoOutput?.capturePhoto(with: settings, delegate: self)
-        takePictureButton.isEnabled = false
     }
     
     func setupCamera() {
@@ -76,6 +63,15 @@ class CameraViewController: UIViewController, AVCapturePhotoCaptureDelegate {
         }
     }
     
+    @IBAction func takePictureButton(_ sender: UIButton) {
+        let settings = AVCapturePhotoSettings()
+        photoOutput?.capturePhoto(with: settings, delegate: self)
+    }
+    
+    func sendPOST(_ base64String: String) {
+        
+    }
+    
     // ---- AVCapturePhotoCaptureDelegate ----
     
     func photoOutput(_ output: AVCapturePhotoOutput, didFinishProcessingPhoto photo: AVCapturePhoto, error: Error?) {
@@ -85,12 +81,10 @@ class CameraViewController: UIViewController, AVCapturePhotoCaptureDelegate {
             let base64String = imageData.base64EncodedString()
             sendPOST(base64String)
             
-            performSegue(withIdentifier: "PreviewPictureSegue", sender: nil)
+//            performSegue(withIdentifier: "PreviewPictureSegue", sender: nil)
         }
     }
     
-    func sendPOST(_ base64String: String) {
-        // SEND POST
-    }
+    
     
 }
