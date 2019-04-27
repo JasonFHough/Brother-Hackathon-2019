@@ -12,3 +12,12 @@ protocol PrintButtonDelegate {
     var tappedPrintButtonCell: FoodTableViewCell? { get set }
     func presentPopup()
 }
+
+protocol PrinterSelectionDelegate {
+    var tappedSwitchCell: SelectPrinterDeviceTableViewCell? { get set }
+    func disableAllOtherSwitches()
+}
+
+@objc protocol BRSelectDeviceTableViewControllerDelegate : NSObjectProtocol {
+    func setSelected(deviceInfo: BRPtouchDeviceInfo)
+}

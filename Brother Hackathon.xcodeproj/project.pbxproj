@@ -102,6 +102,12 @@
 		968ED94F2273D5E20042A266 /* SF-Compact-Rounded-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 968ED8FC2273D5E20042A266 /* SF-Compact-Rounded-Bold.otf */; };
 		968ED9502273D5E20042A266 /* SF-Compact-Rounded-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 968ED8FD2273D5E20042A266 /* SF-Compact-Rounded-Thin.otf */; };
 		968ED9532273DE260042A266 /* MyProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 968ED9522273DE260042A266 /* MyProtocols.swift */; };
+		968ED96522742D570042A266 /* BRPtouchPrinterKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 968ED96422742D570042A266 /* BRPtouchPrinterKit.framework */; };
+		968ED96722742D890042A266 /* rj2150_50mm.bin in Resources */ = {isa = PBXBuildFile; fileRef = 968ED96622742D890042A266 /* rj2150_50mm.bin */; };
+		968ED96B22742E0D0042A266 /* ExternalAccessory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 968ED96A22742E0D0042A266 /* ExternalAccessory.framework */; };
+		968ED970227439F20042A266 /* SelectPrinterDeviceView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 968ED96F227439F20042A266 /* SelectPrinterDeviceView.storyboard */; };
+		968ED97222743A060042A266 /* SelectPrinterDeviceTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 968ED97122743A060042A266 /* SelectPrinterDeviceTableViewController.swift */; };
+		968ED97422743B190042A266 /* SelectPrinterDeviceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 968ED97322743B190042A266 /* SelectPrinterDeviceTableViewCell.swift */; };
 		96AB4220226D7579007F02D2 /* FoodListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AB421F226D7579007F02D2 /* FoodListTableViewController.swift */; };
 		96AB4222226D761F007F02D2 /* FoodTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AB4221226D761F007F02D2 /* FoodTableViewCell.swift */; };
 /* End PBXBuildFile section */
@@ -204,6 +210,14 @@
 		968ED8FC2273D5E20042A266 /* SF-Compact-Rounded-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Compact-Rounded-Bold.otf"; sourceTree = "<group>"; };
 		968ED8FD2273D5E20042A266 /* SF-Compact-Rounded-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Compact-Rounded-Thin.otf"; sourceTree = "<group>"; };
 		968ED9522273DE260042A266 /* MyProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProtocols.swift; sourceTree = "<group>"; };
+		968ED96422742D570042A266 /* BRPtouchPrinterKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BRPtouchPrinterKit.framework; sourceTree = "<group>"; };
+		968ED96622742D890042A266 /* rj2150_50mm.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; path = rj2150_50mm.bin; sourceTree = "<group>"; };
+		968ED96822742DF60042A266 /* PtouchPrinterKit-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PtouchPrinterKit-Bridging-Header.h"; sourceTree = "<group>"; };
+		968ED96A22742E0D0042A266 /* ExternalAccessory.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ExternalAccessory.framework; path = System/Library/Frameworks/ExternalAccessory.framework; sourceTree = SDKROOT; };
+		968ED96C22742E0D0042A266 /* Brother Hackathon.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Brother Hackathon.entitlements"; sourceTree = "<group>"; };
+		968ED96F227439F20042A266 /* SelectPrinterDeviceView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SelectPrinterDeviceView.storyboard; sourceTree = "<group>"; };
+		968ED97122743A060042A266 /* SelectPrinterDeviceTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectPrinterDeviceTableViewController.swift; sourceTree = "<group>"; };
+		968ED97322743B190042A266 /* SelectPrinterDeviceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectPrinterDeviceTableViewCell.swift; sourceTree = "<group>"; };
 		96AB421F226D7579007F02D2 /* FoodListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodListTableViewController.swift; sourceTree = "<group>"; };
 		96AB4221226D761F007F02D2 /* FoodTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -213,6 +227,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				968ED96B22742E0D0042A266 /* ExternalAccessory.framework in Frameworks */,
+				968ED96522742D570042A266 /* BRPtouchPrinterKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -223,6 +239,8 @@
 			isa = PBXGroup;
 			children = (
 				961393922259901F00027D93 /* Brother Hackathon */,
+				968ED96322742D460042A266 /* libs */,
+				968ED96922742E0D0042A266 /* Frameworks */,
 				961393912259901F00027D93 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -238,6 +256,9 @@
 		961393922259901F00027D93 /* Brother Hackathon */ = {
 			isa = PBXGroup;
 			children = (
+				968ED96622742D890042A266 /* rj2150_50mm.bin */,
+				968ED96822742DF60042A266 /* PtouchPrinterKit-Bridging-Header.h */,
+				968ED96C22742E0D0042A266 /* Brother Hackathon.entitlements */,
 				968ED8A52273D5E20042A266 /* Fonts */,
 				968ED9512273DE140042A266 /* Protocols */,
 				9613939D2259902100027D93 /* Assets.xcassets */,
@@ -247,6 +268,7 @@
 				961393A22259902100027D93 /* Info.plist */,
 				968ED89B227394F00042A266 /* NavigationView */,
 				961393A82259938800027D93 /* MainCameraView */,
+				968ED96E227439B80042A266 /* SelectPrinterDeviceView */,
 				96AB421E226D753B007F02D2 /* PrintFoodTableView */,
 				968ED89E2273A0130042A266 /* PrintPopupView */,
 			);
@@ -418,6 +440,32 @@
 			path = Protocols;
 			sourceTree = "<group>";
 		};
+		968ED96322742D460042A266 /* libs */ = {
+			isa = PBXGroup;
+			children = (
+				968ED96422742D570042A266 /* BRPtouchPrinterKit.framework */,
+			);
+			path = libs;
+			sourceTree = "<group>";
+		};
+		968ED96922742E0D0042A266 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				968ED96A22742E0D0042A266 /* ExternalAccessory.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		968ED96E227439B80042A266 /* SelectPrinterDeviceView */ = {
+			isa = PBXGroup;
+			children = (
+				968ED96F227439F20042A266 /* SelectPrinterDeviceView.storyboard */,
+				968ED97122743A060042A266 /* SelectPrinterDeviceTableViewController.swift */,
+				968ED97322743B190042A266 /* SelectPrinterDeviceTableViewCell.swift */,
+			);
+			path = SelectPrinterDeviceView;
+			sourceTree = "<group>";
+		};
 		96AB421E226D753B007F02D2 /* PrintFoodTableView */ = {
 			isa = PBXGroup;
 			children = (
@@ -460,6 +508,11 @@
 				TargetAttributes = {
 					9613938F2259901F00027D93 = {
 						CreatedOnToolsVersion = 10.2;
+						SystemCapabilities = {
+							com.apple.WAC = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -528,6 +581,7 @@
 				968ED9102273D5E20042A266 /* SF-Pro-Display-LightItalic.otf in Resources */,
 				968ED9282273D5E20042A266 /* Montserrat-Bold.ttf in Resources */,
 				961393A12259902100027D93 /* LaunchScreen.storyboard in Resources */,
+				968ED970227439F20042A266 /* SelectPrinterDeviceView.storyboard in Resources */,
 				968ED90B2273D5E20042A266 /* SF-Pro-Text-Bold.otf in Resources */,
 				968ED92D2273D5E20042A266 /* Montserrat-ExtraBold.ttf in Resources */,
 				968ED9332273D5E20042A266 /* SF-Compact-Text-Semibold.otf in Resources */,
@@ -552,6 +606,7 @@
 				968ED90F2273D5E20042A266 /* SF-Pro-Display-UltralightItalic.otf in Resources */,
 				968ED93B2273D5E20042A266 /* SF-Compact-Text-Bold.otf in Resources */,
 				9613939E2259902100027D93 /* Assets.xcassets in Resources */,
+				968ED96722742D890042A266 /* rj2150_50mm.bin in Resources */,
 				968ED9482273D5E20042A266 /* SF-Compact-Rounded-Medium.otf in Resources */,
 				968ED90D2273D5E20042A266 /* SF-Pro-Display-HeavyItalic.otf in Resources */,
 				968ED9352273D5E20042A266 /* SF-Compact-Display-Semibold.otf in Resources */,
@@ -587,6 +642,8 @@
 			files = (
 				961393AA2259973D00027D93 /* CameraViewController.swift in Sources */,
 				968ED8A22273B0360042A266 /* PrintPopupViewController.swift in Sources */,
+				968ED97422743B190042A266 /* SelectPrinterDeviceTableViewCell.swift in Sources */,
+				968ED97222743A060042A266 /* SelectPrinterDeviceTableViewController.swift in Sources */,
 				96AB4220226D7579007F02D2 /* FoodListTableViewController.swift in Sources */,
 				968ED8A42273B38B0042A266 /* topBarViewController.swift in Sources */,
 				961393942259901F00027D93 /* AppDelegate.swift in Sources */,
@@ -738,8 +795,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Brother Hackathon/Brother Hackathon.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5DM46G37QA;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/libs",
+				);
 				INFOPLIST_FILE = "Brother Hackathon/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -747,6 +809,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.JasonHough.Brother-Hackathon";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Brother Hackathon/PtouchPrinterKit-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -756,8 +819,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Brother Hackathon/Brother Hackathon.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5DM46G37QA;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/libs",
+				);
 				INFOPLIST_FILE = "Brother Hackathon/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -765,6 +833,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.JasonHough.Brother-Hackathon";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Brother Hackathon/PtouchPrinterKit-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

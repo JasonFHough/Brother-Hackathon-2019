@@ -78,8 +78,8 @@ class FoodListTableViewController: UITableViewController, PrintButtonDelegate {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destination = segue.destination as? PrintPopupViewController {
-            guard let cell = tappedPrintButtonCell else { print("1"); return }
-            guard let indexPath = self.tableView.indexPath(for: cell) else { print("2"); return }
+            guard let cell = tappedPrintButtonCell else { return }
+            guard let indexPath = self.tableView.indexPath(for: cell) else { return }
             
             destination.currentFoodItem = arrOfTestFoods[indexPath.row]
         }

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="aGP-QC-rCN">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Select Printer Device Table View Controller-->
+        <scene sceneID="ceC-E5-w0E">
+            <objects>
+                <tableViewController id="aGP-QC-rCN" customClass="SelectPrinterDeviceTableViewController" customModule="Brother_Hackathon" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="F6Q-fg-vpF">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.95686274510000002" green="0.95294117649999999" blue="0.81568627449999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="sectionIndexBackgroundColor" red="0.95686274510000002" green="0.95294117649999999" blue="0.81568627449999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="selectDeviceTableViewCell" id="26j-D1-pCz" customClass="SelectPrinterDeviceTableViewCell" customModule="Brother_Hackathon" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="26j-D1-pCz" id="Q0B-bX-s6I">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="JJS-VC-TOl" userLabel="Selection Switch">
+                                            <rect key="frame" x="343" y="6" width="51" height="31"/>
+                                        </switch>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Printer Model" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TMj-s4-m6G">
+                                            <rect key="frame" x="20" y="5" width="315" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Serial" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="63B-Wx-4Ep">
+                                            <rect key="frame" x="20" y="24" width="315" height="17"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="TMj-s4-m6G" firstAttribute="leading" secondItem="Q0B-bX-s6I" secondAttribute="leading" constant="20" id="EaP-c2-5dp"/>
+                                        <constraint firstItem="JJS-VC-TOl" firstAttribute="leading" secondItem="TMj-s4-m6G" secondAttribute="trailing" constant="8" id="Mel-TH-R0I"/>
+                                        <constraint firstItem="JJS-VC-TOl" firstAttribute="leading" secondItem="63B-Wx-4Ep" secondAttribute="trailing" constant="8" id="OXd-XR-p0E"/>
+                                        <constraint firstAttribute="trailing" secondItem="JJS-VC-TOl" secondAttribute="trailing" constant="22" id="QBm-El-M4i"/>
+                                        <constraint firstItem="TMj-s4-m6G" firstAttribute="top" secondItem="Q0B-bX-s6I" secondAttribute="top" constant="5" id="VVB-4R-6nA"/>
+                                        <constraint firstItem="63B-Wx-4Ep" firstAttribute="leading" secondItem="Q0B-bX-s6I" secondAttribute="leading" constant="20" id="dcN-ZU-6HZ"/>
+                                        <constraint firstItem="JJS-VC-TOl" firstAttribute="top" secondItem="Q0B-bX-s6I" secondAttribute="top" constant="6" id="eyR-RJ-ugU"/>
+                                        <constraint firstAttribute="bottom" secondItem="63B-Wx-4Ep" secondAttribute="bottom" constant="2.5" id="tOE-lT-1yt"/>
+                                        <constraint firstAttribute="bottom" secondItem="JJS-VC-TOl" secondAttribute="bottom" constant="6.5" id="ukv-Oj-xLr"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <color key="backgroundColor" red="0.95686274510000002" green="0.95294117649999999" blue="0.81568627449999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <connections>
+                                    <outlet property="printerModelLabel" destination="TMj-s4-m6G" id="mcH-MS-P5C"/>
+                                    <outlet property="selectionSwitch" destination="JJS-VC-TOl" id="biy-0N-t7D"/>
+                                    <outlet property="serialLabel" destination="63B-Wx-4Ep" id="l4P-xy-xJb"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="aGP-QC-rCN" id="qcY-OD-Aui"/>
+                            <outlet property="delegate" destination="aGP-QC-rCN" id="l21-qS-6sv"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="a2p-vm-E6J" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="63.768115942028992" y="169.41964285714286"/>
+        </scene>
+    </scenes>
+</document>

@@ -33,10 +33,6 @@ class CameraViewController: UIViewController, AVCapturePhotoCaptureDelegate {
         setupCamera()
     }
     
-    @IBAction func toggleFlashButtonActions(_ sender: UIButton) {
-        
-    }
-    
     func setupCamera() {
         // Create capture session
         let captureSession = AVCaptureSession()
