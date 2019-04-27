@@ -9,6 +9,11 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Yrsa-Regular.ttf">
+            <string>Yrsa-Regular</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Print Popup View Controller-->
         <scene sceneID="hRg-KO-ieQ">
@@ -27,7 +32,7 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="thl-YM-5Pn">
                                                 <rect key="frame" x="119.66666666666666" y="18" width="95.666666666666657" height="29"/>
                                                 <subviews>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Print" translatesAutoresizingMaskIntoConstraints="NO" id="Hhz-Ng-Vnc">
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Dark Print Icon" translatesAutoresizingMaskIntoConstraints="NO" id="Hhz-Ng-Vnc">
                                                         <rect key="frame" x="0.0" y="0.0" width="29" height="29"/>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PRINT" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SdG-3f-fnw">
@@ -51,10 +56,16 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="44" id="qFr-5y-BPR"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                        <fontDescription key="fontDescription" name="Yrsa-Regular" family="Yrsa" pointSize="32"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jVm-6u-YD3" userLabel="Food Image">
+                                        <rect key="frame" x="101.33333333333333" y="179" width="132.33333333333337" height="132.33333333333337"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="jVm-6u-YD3" secondAttribute="height" multiplier="1:1" id="OVX-Qx-dAw"/>
+                                        </constraints>
+                                    </imageView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="bLD-wG-hOR" userLabel="Quantity">
                                         <rect key="frame" x="16" y="353.33333333333337" width="303" height="57"/>
                                         <subviews>
@@ -129,12 +140,6 @@
                                             </button>
                                         </subviews>
                                     </stackView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jVm-6u-YD3" userLabel="Food Image">
-                                        <rect key="frame" x="101.33333333333333" y="179" width="132.33333333333337" height="132.33333333333337"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" secondItem="jVm-6u-YD3" secondAttribute="height" multiplier="1:1" id="OVX-Qx-dAw"/>
-                                        </constraints>
-                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.95686274510000002" green="0.95294117649999999" blue="0.81568627449999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
@@ -189,7 +194,7 @@
         <image name="Add Icon" width="56.333332061767578" height="56.333332061767578"/>
         <image name="Cancel Button" width="142.33332824707031" height="45"/>
         <image name="Confirm Button" width="143.33332824707031" height="46"/>
+        <image name="Dark Print Icon" width="29" height="29"/>
         <image name="Minus Icon" width="56.333332061767578" height="56.333332061767578"/>
-        <image name="Print" width="29" height="29"/>
     </resources>
 </document>

@@ -41,7 +41,6 @@
                                             <state key="normal" image="Menu Print"/>
                                             <connections>
                                                 <action selector="printButton:" destination="y1A-OE-JBP" eventType="touchUpInside" id="hw4-yn-kfk"/>
-                                                <segue destination="udf-xn-iRc" kind="presentation" id="PZA-Nx-mUd"/>
                                             </connections>
                                         </button>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qqf-qU-6ou">
@@ -78,6 +77,9 @@
                             <outlet property="delegate" destination="ucs-PK-vcS" id="VaL-os-GeY"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <segue destination="udf-xn-iRc" kind="presentation" identifier="PrintPopupSegue" id="SSk-LW-7do"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VRV-hu-do4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

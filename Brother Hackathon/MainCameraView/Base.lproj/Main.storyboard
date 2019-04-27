@@ -33,6 +33,9 @@
                                                 <state key="normal" image="Menu">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="toggleFlashButtonActions:" destination="3dA-Ew-wDv" eventType="touchUpInside" id="AMZ-gs-hkh"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="duU-Q4-eNR">
                                                 <rect key="frame" x="101" y="0.0" width="141" height="141"/>

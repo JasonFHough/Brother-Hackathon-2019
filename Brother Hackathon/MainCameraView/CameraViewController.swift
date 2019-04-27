@@ -15,6 +15,7 @@ class CameraViewController: UIViewController, AVCapturePhotoCaptureDelegate {
     @IBOutlet weak var takePictureButton: UIButton!
     
     var photoOutput: AVCapturePhotoOutput?
+    var cameraSettings: AVCapturePhotoSettings?
     var takenPicture: UIImage?
     
     override func viewWillAppear(_ animated: Bool) {
@@ -32,15 +33,25 @@ class CameraViewController: UIViewController, AVCapturePhotoCaptureDelegate {
         setupCamera()
     }
     
+    @IBAction func toggleFlashButtonActions(_ sender: UIButton) {
+        if cameraSettings?.flashMode = .auto || cameraSettings?.flashMode = .on {
+            cameraSettings.flashMode = .off
+        }
+    }
+    
     func setupCamera() {
         // Create capture session
         let captureSession = AVCaptureSession()
-        captureSession.sessionPreset = .high
+        captureSession.sessionPreset = .photo
         
         // Get device's back camera input
         guard let captureDevice = AVCaptureDevice.default(for: .video) else { return }
         guard let input = try? AVCaptureDeviceInput(device: captureDevice) else { return }
         captureSession.addInput(input)
+        
+        // Setup camera settings
+        cameraSettings = AVCapturePhotoSettings()
+        cameraSettings?.flashMode = .auto
         
         // Setup photo output
         photoOutput = AVCapturePhotoOutput()

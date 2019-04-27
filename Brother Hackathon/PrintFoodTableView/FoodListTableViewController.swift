@@ -8,8 +8,17 @@
 
 import UIKit
 
-class FoodListTableViewController: UITableViewController {
+struct FoodItem {
+    let name: String
+    let picture: UIImage
+}
 
+class FoodListTableViewController: UITableViewController, PrintButtonDelegate {
+    
+    var tappedPrintButtonCell: FoodTableViewCell?   // Assigned by FoodTableViewCell PrintTapped function (called when that cell's button is tapped)
+    
+    var arrOfTestFoods = [FoodItem(name: "Mac n' Cheese", picture: UIImage(named: "MacNCheese")!), FoodItem(name: "Steak", picture: UIImage(named: "Steak")!), FoodItem(name: "Burger", picture: UIImage(named: "Burger")!)]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -24,23 +33,22 @@ class FoodListTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 4
+        return arrOfTestFoods.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "FoodCell", for: indexPath) as? FoodTableViewCell else { fatalError("Could not load FoodCell as FoodTableViewCell") }
-
+        
+        cell.delegate = self
+        
         // Assign image
-        cell.foodImageView.image = UIImage(named: "MacNCheese");
-        
+        cell.foodImageView.image = arrOfTestFoods[indexPath.row].picture
+
         // Make ImageView Round
-        cell.foodImageView.layer.cornerRadius = (cell.foodImageView.frame.height) / 2
-        cell.foodImageView.layer.masksToBounds = true
-        cell.foodImageView.clipsToBounds = true
-        
+        roundImage(cell)
+
         // Change Food Name
-        cell.foodTitleLabel.text = "Mac n' Cheese"
+        cell.foodTitleLabel.text = arrOfTestFoods[indexPath.row].name
 
         return cell
     }
@@ -54,15 +62,34 @@ class FoodListTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             // Delete the row from the data source
+            arrOfTestFoods.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }
     }
     
-    // MARK: - Navigation
+    // MARK: Navigation
+    
+    // Called from FoodTableViewCell printButton function
+    func presentPopup() {
+        performSegue(withIdentifier: "PrintPopupSegue", sender: self)
+    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
+        if let destination = segue.destination as? PrintPopupViewController {
+            guard let cell = tappedPrintButtonCell else { print("1"); return }
+            guard let indexPath = self.tableView.indexPath(for: cell) else { print("2"); return }
+            
+            destination.currentFoodItem = arrOfTestFoods[indexPath.row]
+        }
+    }
+    
+    // MARK: - Custom functions
+    
+    func roundImage(_ cell: FoodTableViewCell) {
+        cell.foodImageView.layer.cornerRadius = (cell.foodImageView.frame.height) / 2
+        cell.foodImageView.layer.masksToBounds = true
+        cell.foodImageView.clipsToBounds = true
     }
 }

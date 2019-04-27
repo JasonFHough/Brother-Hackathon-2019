@@ -10,21 +10,19 @@ import UIKit
 
 class FoodTableViewCell: UITableViewCell {
     
+    var delegate: PrintButtonDelegate?
+    
     @IBOutlet weak var foodImageView: UIImageView!
     @IBOutlet weak var foodTitleLabel: UILabel!
     @IBOutlet weak var printButton: UIButton!
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-        // Configure the view for the selected state
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        self.delegate = nil
     }
 
     @IBAction func printButton(_ sender: UIButton) {
-        
+        self.delegate?.tappedPrintButtonCell = self
+        self.delegate?.presentPopup()
     }
 }
