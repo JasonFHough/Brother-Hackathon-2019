@@ -34,9 +34,7 @@ class CameraViewController: UIViewController, AVCapturePhotoCaptureDelegate {
     }
     
     @IBAction func toggleFlashButtonActions(_ sender: UIButton) {
-        if cameraSettings?.flashMode = .auto || cameraSettings?.flashMode = .on {
-            cameraSettings.flashMode = .off
-        }
+        
     }
     
     func setupCamera() {
