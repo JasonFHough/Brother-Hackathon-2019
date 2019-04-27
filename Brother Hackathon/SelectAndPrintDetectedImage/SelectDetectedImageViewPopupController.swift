@@ -21,7 +21,6 @@ class SelectDetectedImageViewPopupController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
     }
     
     @IBAction func cancelButtonAction(_ sender: UIButton) {
@@ -32,9 +31,7 @@ class SelectDetectedImageViewPopupController: UIViewController {
         showAlert()
     }
     
-    @IBAction func confirmButtonAction(_ sender: UIButton) {
-        
-    }
+    @IBAction func confirmButtonAction(_ sender: UIButton) { }
     
     func showAlert() {
         //1. Create the alert controller.

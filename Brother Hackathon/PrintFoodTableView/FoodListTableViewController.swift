@@ -20,7 +20,7 @@ class FoodListTableViewController: UITableViewController, PrintButtonDelegate {
         // Displays Edit button in the navigation bar for this view controller.
         self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
-
+    
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
