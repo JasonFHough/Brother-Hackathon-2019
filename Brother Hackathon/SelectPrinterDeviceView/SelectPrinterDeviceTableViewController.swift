@@ -12,7 +12,7 @@ class SelectPrinterDeviceTableViewController: UITableViewController, PrinterSele
     
     var tappedSwitchCell: SelectPrinterDeviceTableViewCell?
     
-    var delegate: BRSelectDeviceTableViewControllerDelegate?
+    var delegate: BRSelectDeviceTableViewControllerDelegate?    // Assigned by PrintPopupViewController
     var deviceListByMfi : [BRPtouchDeviceInfo]?
     
     deinit {
@@ -22,6 +22,8 @@ class SelectPrinterDeviceTableViewController: UITableViewController, PrinterSele
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(dismissView))
         
         BRPtouchBluetoothManager.shared()?.registerForBRDeviceNotifications()
         NotificationCenter.default.addObserver(self, selector: #selector(accessoryDidConnect), name: NSNotification.Name.BRDeviceDidConnect , object: nil)
@@ -70,6 +72,7 @@ class SelectPrinterDeviceTableViewController: UITableViewController, PrinterSele
         let cellIdentifier = "selectDeviceTableViewCell"
         guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier) as? SelectPrinterDeviceTableViewCell else { fatalError("Could not get cell with type SelectPrinterDeviceTableViewCell") }
         
+        cell.delegate = self
         cell.printerModelLabel.text = deviceListByMfi?[indexPath.row].strModelName ?? nil
         cell.serialLabel.text = deviceListByMfi?[indexPath.row].strSerialNumber ?? nil
         cell.selectionSwitch.setOn(false, animated: false)
@@ -77,14 +80,27 @@ class SelectPrinterDeviceTableViewController: UITableViewController, PrinterSele
         return cell
     }
     
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    // Send selected printer back to parent view
+    @objc func dismissView() {
+        guard let tappedCell = tappedSwitchCell else {
+            dismiss(animated: true)
+            return
+        }
+        guard let indexPath = tableView.indexPath(for: tappedCell) ?? nil else {    // Will only fail when no printer has been selected
+            dismiss(animated: true)
+            return
+        }
+        
         if let deviceInfo = deviceListByMfi?[indexPath.row] {
             self.delegate?.setSelected(deviceInfo: deviceInfo)
         }
+        
+        dismiss(animated: true)
     }
     
     // MARK: - Printer Selection Delegate
     
+    // Called whenever a switch is toggled
     func disableAllOtherSwitches() {
         guard let deviceList = deviceListByMfi else { return }
         for (i, _) in deviceList.enumerated() {

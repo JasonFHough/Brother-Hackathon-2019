@@ -7,8 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		96077CA922745BEC00EC517B /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 96077CA822745BEB00EC517B /* libc++.tbd */; };
+		96077CAB22745BFA00EC517B /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 96077CAA22745BFA00EC517B /* libz.tbd */; };
+		96077CAE22747C6500EC517B /* SelectDetectedImageView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96077CAD22747C6500EC517B /* SelectDetectedImageView.storyboard */; };
+		96077CB022747E2600EC517B /* SelectDetectedImageViewPopupController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96077CAF22747E2600EC517B /* SelectDetectedImageViewPopupController.swift */; };
+		96077CB222747E4900EC517B /* SelectDetectedImageTableViewPopupController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96077CB122747E4900EC517B /* SelectDetectedImageTableViewPopupController.swift */; };
+		96077CB42274A27A00EC517B /* SelectDetectedImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96077CB32274A27A00EC517B /* SelectDetectedImageTableViewCell.swift */; };
+		96077CB62274B4CA00EC517B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96077CB52274B4CA00EC517B /* Main.storyboard */; };
 		961393942259901F00027D93 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961393932259901F00027D93 /* AppDelegate.swift */; };
-		961393992259901F00027D93 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 961393972259901F00027D93 /* Main.storyboard */; };
 		9613939C2259901F00027D93 /* Brother_Hackathon.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9613939A2259901F00027D93 /* Brother_Hackathon.xcdatamodeld */; };
 		9613939E2259902100027D93 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9613939D2259902100027D93 /* Assets.xcassets */; };
 		961393A12259902100027D93 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9613939F2259902100027D93 /* LaunchScreen.storyboard */; };
@@ -101,7 +107,7 @@
 		968ED94E2273D5E20042A266 /* SF-Compact-Rounded-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 968ED8FB2273D5E20042A266 /* SF-Compact-Rounded-Black.otf */; };
 		968ED94F2273D5E20042A266 /* SF-Compact-Rounded-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 968ED8FC2273D5E20042A266 /* SF-Compact-Rounded-Bold.otf */; };
 		968ED9502273D5E20042A266 /* SF-Compact-Rounded-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 968ED8FD2273D5E20042A266 /* SF-Compact-Rounded-Thin.otf */; };
-		968ED9532273DE260042A266 /* MyProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 968ED9522273DE260042A266 /* MyProtocols.swift */; };
+		968ED9532273DE260042A266 /* GlobalStuff.swift in Sources */ = {isa = PBXBuildFile; fileRef = 968ED9522273DE260042A266 /* GlobalStuff.swift */; };
 		968ED96522742D570042A266 /* BRPtouchPrinterKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 968ED96422742D570042A266 /* BRPtouchPrinterKit.framework */; };
 		968ED96722742D890042A266 /* rj2150_50mm.bin in Resources */ = {isa = PBXBuildFile; fileRef = 968ED96622742D890042A266 /* rj2150_50mm.bin */; };
 		968ED96B22742E0D0042A266 /* ExternalAccessory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 968ED96A22742E0D0042A266 /* ExternalAccessory.framework */; };
@@ -113,9 +119,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		96077CA822745BEB00EC517B /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		96077CAA22745BFA00EC517B /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		96077CAD22747C6500EC517B /* SelectDetectedImageView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SelectDetectedImageView.storyboard; sourceTree = "<group>"; };
+		96077CAF22747E2600EC517B /* SelectDetectedImageViewPopupController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectDetectedImageViewPopupController.swift; sourceTree = "<group>"; };
+		96077CB122747E4900EC517B /* SelectDetectedImageTableViewPopupController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectDetectedImageTableViewPopupController.swift; sourceTree = "<group>"; };
+		96077CB32274A27A00EC517B /* SelectDetectedImageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectDetectedImageTableViewCell.swift; sourceTree = "<group>"; };
+		96077CB52274B4CA00EC517B /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		961393902259901F00027D93 /* Brother Hackathon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Brother Hackathon.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		961393932259901F00027D93 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		961393982259901F00027D93 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9613939B2259901F00027D93 /* Brother_Hackathon.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Brother_Hackathon.xcdatamodel; sourceTree = "<group>"; };
 		9613939D2259902100027D93 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		961393A02259902100027D93 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -209,7 +221,7 @@
 		968ED8FB2273D5E20042A266 /* SF-Compact-Rounded-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Compact-Rounded-Black.otf"; sourceTree = "<group>"; };
 		968ED8FC2273D5E20042A266 /* SF-Compact-Rounded-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Compact-Rounded-Bold.otf"; sourceTree = "<group>"; };
 		968ED8FD2273D5E20042A266 /* SF-Compact-Rounded-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Compact-Rounded-Thin.otf"; sourceTree = "<group>"; };
-		968ED9522273DE260042A266 /* MyProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProtocols.swift; sourceTree = "<group>"; };
+		968ED9522273DE260042A266 /* GlobalStuff.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalStuff.swift; sourceTree = "<group>"; };
 		968ED96422742D570042A266 /* BRPtouchPrinterKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BRPtouchPrinterKit.framework; sourceTree = "<group>"; };
 		968ED96622742D890042A266 /* rj2150_50mm.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; path = rj2150_50mm.bin; sourceTree = "<group>"; };
 		968ED96822742DF60042A266 /* PtouchPrinterKit-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PtouchPrinterKit-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -227,6 +239,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				96077CAB22745BFA00EC517B /* libz.tbd in Frameworks */,
+				96077CA922745BEC00EC517B /* libc++.tbd in Frameworks */,
 				968ED96B22742E0D0042A266 /* ExternalAccessory.framework in Frameworks */,
 				968ED96522742D570042A266 /* BRPtouchPrinterKit.framework in Frameworks */,
 			);
@@ -235,6 +249,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		96077CAC22747BF900EC517B /* SelectAndPrintDetectedImage */ = {
+			isa = PBXGroup;
+			children = (
+				96077CAD22747C6500EC517B /* SelectDetectedImageView.storyboard */,
+				96077CAF22747E2600EC517B /* SelectDetectedImageViewPopupController.swift */,
+				96077CB122747E4900EC517B /* SelectDetectedImageTableViewPopupController.swift */,
+				96077CB32274A27A00EC517B /* SelectDetectedImageTableViewCell.swift */,
+			);
+			path = SelectAndPrintDetectedImage;
+			sourceTree = "<group>";
+		};
 		961393872259901F00027D93 = {
 			isa = PBXGroup;
 			children = (
@@ -271,6 +296,7 @@
 				968ED96E227439B80042A266 /* SelectPrinterDeviceView */,
 				96AB421E226D753B007F02D2 /* PrintFoodTableView */,
 				968ED89E2273A0130042A266 /* PrintPopupView */,
+				96077CAC22747BF900EC517B /* SelectAndPrintDetectedImage */,
 			);
 			path = "Brother Hackathon";
 			sourceTree = "<group>";
@@ -278,7 +304,7 @@
 		961393A82259938800027D93 /* MainCameraView */ = {
 			isa = PBXGroup;
 			children = (
-				961393972259901F00027D93 /* Main.storyboard */,
+				96077CB52274B4CA00EC517B /* Main.storyboard */,
 				961393A92259973D00027D93 /* CameraViewController.swift */,
 			);
 			path = MainCameraView;
@@ -435,7 +461,7 @@
 		968ED9512273DE140042A266 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
-				968ED9522273DE260042A266 /* MyProtocols.swift */,
+				968ED9522273DE260042A266 /* GlobalStuff.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -452,6 +478,8 @@
 			isa = PBXGroup;
 			children = (
 				968ED96A22742E0D0042A266 /* ExternalAccessory.framework */,
+				96077CAA22745BFA00EC517B /* libz.tbd */,
+				96077CA822745BEB00EC517B /* libc++.tbd */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -574,6 +602,7 @@
 				968ED90C2273D5E20042A266 /* SF-Pro-Display-MediumItalic.otf in Resources */,
 				968ED9502273D5E20042A266 /* SF-Compact-Rounded-Thin.otf in Resources */,
 				968ED9412273D5E20042A266 /* SF-Compact-Text-HeavyItalic.otf in Resources */,
+				96077CB62274B4CA00EC517B /* Main.storyboard in Resources */,
 				968ED9072273D5E20042A266 /* SF-Pro-Display-Heavy.otf in Resources */,
 				968ED91D2273D5E20042A266 /* Yrsa-Light.ttf in Resources */,
 				968ED93C2273D5E20042A266 /* SF-Compact-Text-BoldItalic.otf in Resources */,
@@ -629,7 +658,7 @@
 				968ED92E2273D5E20042A266 /* Montserrat-Black.ttf in Resources */,
 				968ED9032273D5E20042A266 /* SF-Pro-Display-Regular.otf in Resources */,
 				968ED9272273D5E20042A266 /* Montserrat-Thin.ttf in Resources */,
-				961393992259901F00027D93 /* Main.storyboard in Resources */,
+				96077CAE22747C6500EC517B /* SelectDetectedImageView.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -645,25 +674,20 @@
 				968ED97422743B190042A266 /* SelectPrinterDeviceTableViewCell.swift in Sources */,
 				968ED97222743A060042A266 /* SelectPrinterDeviceTableViewController.swift in Sources */,
 				96AB4220226D7579007F02D2 /* FoodListTableViewController.swift in Sources */,
+				96077CB022747E2600EC517B /* SelectDetectedImageViewPopupController.swift in Sources */,
 				968ED8A42273B38B0042A266 /* topBarViewController.swift in Sources */,
+				96077CB42274A27A00EC517B /* SelectDetectedImageTableViewCell.swift in Sources */,
+				96077CB222747E4900EC517B /* SelectDetectedImageTableViewPopupController.swift in Sources */,
 				961393942259901F00027D93 /* AppDelegate.swift in Sources */,
 				9613939C2259901F00027D93 /* Brother_Hackathon.xcdatamodeld in Sources */,
 				96AB4222226D761F007F02D2 /* FoodTableViewCell.swift in Sources */,
-				968ED9532273DE260042A266 /* MyProtocols.swift in Sources */,
+				968ED9532273DE260042A266 /* GlobalStuff.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		961393972259901F00027D93 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				961393982259901F00027D93 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		9613939F2259902100027D93 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

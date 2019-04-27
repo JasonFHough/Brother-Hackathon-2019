@@ -8,11 +8,6 @@
 
 import UIKit
 
-struct FoodItem {
-    let name: String
-    let picture: UIImage
-}
-
 class FoodListTableViewController: UITableViewController, PrintButtonDelegate {
     
     var tappedPrintButtonCell: FoodTableViewCell?   // Assigned by FoodTableViewCell PrintTapped function (called when that cell's button is tapped)

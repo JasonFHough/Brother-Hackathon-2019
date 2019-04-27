@@ -24,13 +24,13 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="bottom" spacing="71" translatesAutoresizingMaskIntoConstraints="NO" id="7FQ-Eh-RVp">
                                         <rect key="frame" x="16" y="629" width="343" height="141"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Epg-DQ-4aZ" userLabel="Menu">
+                                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Epg-DQ-4aZ" userLabel="Menu">
                                                 <rect key="frame" x="0.0" y="111" width="30" height="30"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="30" id="Yyr-c6-YR6"/>
                                                     <constraint firstAttribute="height" constant="30" id="nKd-wO-pHS"/>
                                                 </constraints>
-                                                <state key="normal" image="Gear Icon">
+                                                <state key="normal">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                             </button>
@@ -82,6 +82,7 @@
                     <connections>
                         <outlet property="cameraView" destination="rQq-dt-3SG" id="PsN-OI-Dhj"/>
                         <outlet property="takePictureButton" destination="duU-Q4-eNR" id="bUP-qJ-FFc"/>
+                        <segue destination="kki-Ci-XZk" kind="presentation" identifier="DetectedImagesPopupSegue" id="xmH-Xw-tA4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="s4s-wL-fXo" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -96,10 +97,17 @@
             </objects>
             <point key="canvasLocation" x="3654" y="-225"/>
         </scene>
+        <!--SelectDetectedImageView-->
+        <scene sceneID="nV2-mg-KYd">
+            <objects>
+                <viewControllerPlaceholder storyboardName="SelectDetectedImageView" id="kki-Ci-XZk" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oc8-Le-Pxn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3685" y="-142"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Capture Button" width="141" height="141"/>
-        <image name="Gear Icon" width="29" height="29"/>
         <image name="Print" width="29" height="29"/>
     </resources>
 </document>

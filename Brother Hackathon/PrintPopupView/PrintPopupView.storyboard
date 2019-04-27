@@ -10,6 +10,9 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
+        <array key="SF-Pro-Text-Semibold.otf">
+            <string>SFProText-Semibold</string>
+        </array>
         <array key="Yrsa-Regular.ttf">
             <string>Yrsa-Regular</string>
         </array>
@@ -30,13 +33,13 @@
                                         <rect key="frame" x="0.0" y="0.0" width="335" height="65.333333333333329"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="thl-YM-5Pn">
-                                                <rect key="frame" x="119.66666666666666" y="18" width="95.666666666666657" height="29"/>
+                                                <rect key="frame" x="126.33333333333334" y="20.666666666666686" width="82.666666666666657" height="24"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Dark Print Icon" translatesAutoresizingMaskIntoConstraints="NO" id="Hhz-Ng-Vnc">
-                                                        <rect key="frame" x="0.0" y="0.0" width="29" height="29"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="16" height="24"/>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PRINT" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SdG-3f-fnw">
-                                                        <rect key="frame" x="37" y="0.0" width="58.666666666666657" height="29"/>
+                                                        <rect key="frame" x="23.999999999999996" y="0.0" width="58.666666666666657" height="24"/>
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                                         <color key="textColor" red="0.42352941176470588" green="0.4823529411764706" blue="0.41960784313725491" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <nil key="highlightedColor"/>
@@ -52,7 +55,7 @@
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Food Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bAA-x8-vtC">
-                                        <rect key="frame" x="16" y="94.666666666666686" width="303" height="44"/>
+                                        <rect key="frame" x="16" y="79" width="303" height="44"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="44" id="qFr-5y-BPR"/>
                                         </constraints>
@@ -60,14 +63,8 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jVm-6u-YD3" userLabel="Food Image">
-                                        <rect key="frame" x="101.33333333333333" y="179" width="132.33333333333337" height="132.33333333333337"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" secondItem="jVm-6u-YD3" secondAttribute="height" multiplier="1:1" id="OVX-Qx-dAw"/>
-                                        </constraints>
-                                    </imageView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="bLD-wG-hOR" userLabel="Quantity">
-                                        <rect key="frame" x="16" y="353.33333333333337" width="303" height="57"/>
+                                        <rect key="frame" x="16" y="377" width="303" height="57"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ybj-9k-oEh" userLabel="Minus">
                                                 <rect key="frame" x="0.0" y="0.0" width="57" height="57"/>
@@ -140,23 +137,62 @@
                                             </button>
                                         </subviews>
                                     </stackView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jVm-6u-YD3" userLabel="Food Image">
+                                        <rect key="frame" x="101.33333333333333" y="131" width="132.33333333333337" height="132.33333333333337"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="132.33000000000001" id="WKZ-h4-y5X"/>
+                                            <constraint firstAttribute="width" constant="132.33000000000001" id="meC-A3-QJl"/>
+                                        </constraints>
+                                    </imageView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="zFM-QX-6Yi" userLabel="Printer Info">
+                                        <rect key="frame" x="16" y="295" width="303" height="53.333333333333314"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Printer Selected" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yd3-KT-IFI">
+                                                <rect key="frame" x="0.0" y="0.0" width="303" height="20"/>
+                                                <fontDescription key="fontDescription" name="SFProText-Semibold" family="SF Pro Text" pointSize="17"/>
+                                                <color key="textColor" red="0.42352941179999998" green="0.4823529412" blue="0.41960784309999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2MY-ee-G0G">
+                                                <rect key="frame" x="0.0" y="20.000000000000004" width="303" height="33.333333333333343"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <state key="normal" title="Select Printer"/>
+                                                <connections>
+                                                    <segue destination="HQc-7K-IQx" kind="presentation" identifier="SelectPrinterDeviceSegue" id="yxM-PR-kxn"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="yd3-KT-IFI" secondAttribute="trailing" id="8Cx-Cl-dSy"/>
+                                            <constraint firstItem="2MY-ee-G0G" firstAttribute="top" secondItem="yd3-KT-IFI" secondAttribute="bottom" id="A4Q-kZ-9tH"/>
+                                            <constraint firstItem="yd3-KT-IFI" firstAttribute="leading" secondItem="zFM-QX-6Yi" secondAttribute="leading" id="Cfj-D2-F6J"/>
+                                            <constraint firstAttribute="trailing" secondItem="2MY-ee-G0G" secondAttribute="trailing" id="GiB-Yg-ytG"/>
+                                            <constraint firstItem="2MY-ee-G0G" firstAttribute="top" secondItem="yd3-KT-IFI" secondAttribute="bottom" id="csj-oa-IvV"/>
+                                            <constraint firstItem="2MY-ee-G0G" firstAttribute="leading" secondItem="zFM-QX-6Yi" secondAttribute="leading" id="jcJ-Uy-TkB"/>
+                                            <constraint firstAttribute="bottom" secondItem="2MY-ee-G0G" secondAttribute="bottom" id="rTR-kZ-PBq"/>
+                                            <constraint firstItem="yd3-KT-IFI" firstAttribute="top" secondItem="zFM-QX-6Yi" secondAttribute="top" id="xKM-Gw-35W"/>
+                                        </constraints>
+                                    </stackView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.95686274510000002" green="0.95294117649999999" blue="0.81568627449999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="A4p-8L-085" secondAttribute="trailing" constant="16" id="54m-DS-kR8"/>
                                     <constraint firstAttribute="bottom" secondItem="A4p-8L-085" secondAttribute="bottom" constant="16" id="6JK-F1-m0B"/>
                                     <constraint firstAttribute="trailing" secondItem="bLD-wG-hOR" secondAttribute="trailing" constant="16" id="7Nf-pv-xFG"/>
-                                    <constraint firstItem="bLD-wG-hOR" firstAttribute="top" secondItem="jVm-6u-YD3" secondAttribute="bottom" constant="42" id="Alm-vR-uvi"/>
                                     <constraint firstAttribute="trailing" secondItem="bAA-x8-vtC" secondAttribute="trailing" constant="16" id="GAb-3U-ZxB"/>
-                                    <constraint firstItem="bAA-x8-vtC" firstAttribute="top" secondItem="X8y-O1-twn" secondAttribute="bottom" constant="29.329999999999998" id="K4j-7j-bDR"/>
+                                    <constraint firstAttribute="trailing" secondItem="zFM-QX-6Yi" secondAttribute="trailing" constant="16" id="GU5-6L-VSz"/>
+                                    <constraint firstItem="bAA-x8-vtC" firstAttribute="top" secondItem="X8y-O1-twn" secondAttribute="bottom" constant="13.666666666666671" id="K4j-7j-bDR"/>
                                     <constraint firstItem="X8y-O1-twn" firstAttribute="leading" secondItem="eOy-Sv-JUo" secondAttribute="leading" id="KDt-QR-6wl"/>
+                                    <constraint firstItem="zFM-QX-6Yi" firstAttribute="top" secondItem="jVm-6u-YD3" secondAttribute="bottom" constant="31.666666666666629" id="NT5-m1-2Wd"/>
                                     <constraint firstItem="jVm-6u-YD3" firstAttribute="centerX" secondItem="bAA-x8-vtC" secondAttribute="centerX" id="Puw-zZ-AwH"/>
-                                    <constraint firstItem="A4p-8L-085" firstAttribute="top" secondItem="bLD-wG-hOR" secondAttribute="bottom" constant="55" id="Qe5-3H-1rV"/>
+                                    <constraint firstItem="A4p-8L-085" firstAttribute="top" secondItem="bLD-wG-hOR" secondAttribute="bottom" constant="31.333333333333371" id="Qe5-3H-1rV"/>
                                     <constraint firstAttribute="trailing" secondItem="X8y-O1-twn" secondAttribute="trailing" id="SEk-qf-wTX"/>
+                                    <constraint firstItem="bLD-wG-hOR" firstAttribute="top" secondItem="zFM-QX-6Yi" secondAttribute="bottom" constant="28.666666666666686" id="URy-l3-PRu"/>
                                     <constraint firstItem="bAA-x8-vtC" firstAttribute="leading" secondItem="eOy-Sv-JUo" secondAttribute="leading" constant="16" id="a1y-sD-3Vt"/>
-                                    <constraint firstItem="jVm-6u-YD3" firstAttribute="top" secondItem="bAA-x8-vtC" secondAttribute="bottom" constant="40.329999999999998" id="cfo-Ek-GJU"/>
+                                    <constraint firstItem="jVm-6u-YD3" firstAttribute="top" secondItem="bAA-x8-vtC" secondAttribute="bottom" constant="8" id="cfo-Ek-GJU"/>
                                     <constraint firstItem="A4p-8L-085" firstAttribute="leading" secondItem="eOy-Sv-JUo" secondAttribute="leading" constant="16" id="mPu-u9-yn3"/>
                                     <constraint firstItem="X8y-O1-twn" firstAttribute="top" secondItem="eOy-Sv-JUo" secondAttribute="top" id="umQ-Kz-SGP"/>
+                                    <constraint firstItem="zFM-QX-6Yi" firstAttribute="leading" secondItem="eOy-Sv-JUo" secondAttribute="leading" constant="16" id="wMp-o5-1yL"/>
                                     <constraint firstItem="bLD-wG-hOR" firstAttribute="leading" secondItem="eOy-Sv-JUo" secondAttribute="leading" constant="16" id="xLt-3Q-rGm"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
@@ -175,6 +211,8 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="CqL-y5-sgn"/>
                     </view>
+                    <navigationItem key="navigationItem" id="2h3-x7-W7U"/>
+                    <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="addLabelButton" destination="X24-0Y-t75" id="hyQ-Rm-M5o"/>
                         <outlet property="cancelButton" destination="lue-tH-Hbb" id="mzs-ey-DEB"/>
@@ -182,12 +220,23 @@
                         <outlet property="foodImage" destination="jVm-6u-YD3" id="ez0-yg-CwO"/>
                         <outlet property="foodNameLabel" destination="bAA-x8-vtC" id="lhd-oS-Odh"/>
                         <outlet property="labelCountLabel" destination="OUa-L4-5re" id="Ym3-GT-36f"/>
+                        <outlet property="selectedPrinterLabel" destination="yd3-KT-IFI" id="449-x6-8qa"/>
                         <outlet property="subtractLabelButton" destination="ybj-9k-oEh" id="1US-mH-QyA"/>
+                        <segue destination="pVh-1M-S25" kind="unwind" identifier="UnwindSegueToCameraView" unwindAction="unwindToCameraViewWithSegue:" id="chy-HS-sfg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rJ4-j0-k4Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="pVh-1M-S25" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="82.400000000000006" y="95.320197044334975"/>
+            <point key="canvasLocation" x="1024.8" y="95.320197044334975"/>
+        </scene>
+        <!--SelectPrinterDeviceView-->
+        <scene sceneID="Trn-XK-P0M">
+            <objects>
+                <viewControllerPlaceholder storyboardName="SelectPrinterDeviceView" id="HQc-7K-IQx" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aMw-wC-1zw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1772.8" y="94.581280788177338"/>
         </scene>
     </scenes>
     <resources>
