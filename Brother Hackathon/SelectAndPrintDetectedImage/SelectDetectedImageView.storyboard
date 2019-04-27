@@ -146,14 +146,6 @@
             </objects>
             <point key="canvasLocation" x="1024.8" y="95.320197044334975"/>
         </scene>
-        <!--SelectPrinterDeviceView-->
-        <scene sceneID="Trn-XK-P0M">
-            <objects>
-                <viewControllerPlaceholder storyboardName="SelectPrinterDeviceView" id="HQc-7K-IQx" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="aMw-wC-1zw" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1512" y="-290"/>
-        </scene>
         <!--Select Detected Image Table View Popup Controller-->
         <scene sceneID="a9R-ef-BcX">
             <objects>

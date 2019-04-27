@@ -61,10 +61,10 @@ class SelectDetectedImageViewPopupController: UIViewController {
     func getLabelText(tf: UITextField) {
         guard let text = tf.text else { return }
         guard let image = image64String else { return }
-        sendPOST(image64: image, label: text)
+        sendTrainingPOST(image64: image, label: text)
     }
     
-    func sendPOST(image64: String, label: String) {
+    func sendTrainingPOST(image64: String, label: String) {
         var urlComponents = URLComponents()
         urlComponents.scheme = "http"
         urlComponents.host = "192.168.201.185"

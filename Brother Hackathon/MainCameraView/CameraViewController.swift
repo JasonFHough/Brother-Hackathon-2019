@@ -35,6 +35,21 @@ class CameraViewController: UIViewController, AVCapturePhotoCaptureDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupCamera()
+        
+        let swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(respondToSwipeGesture))
+        swipeLeft.direction = .left
+        self.view.addGestureRecognizer(swipeLeft)
+    }
+    
+    @objc func respondToSwipeGesture(gesture: UIGestureRecognizer) {
+        if let swipeGesture = gesture as? UISwipeGestureRecognizer {
+            switch swipeGesture.direction {
+            case .left:
+                performSegue(withIdentifier: "SeguePrintFoodTableView", sender: self)
+            default:
+                break
+            }
+        }
     }
     
     func setupCamera() {
@@ -77,7 +92,7 @@ class CameraViewController: UIViewController, AVCapturePhotoCaptureDelegate {
         photoOutput?.capturePhoto(with: settings, delegate: self)
     }
     
-    func sendPOST(_ base64String: String) {
+    func sendClassifyPOST(_ base64String: String) {
         var urlComponents = URLComponents()
         urlComponents.scheme = "http"
         urlComponents.host = "192.168.201.185"
@@ -136,7 +151,7 @@ class CameraViewController: UIViewController, AVCapturePhotoCaptureDelegate {
             takenPicture = UIImage(data: imageData)
             
             let base64String = imageData.base64EncodedString()
-            sendPOST(base64String)
+            sendClassifyPOST(base64String)
         }
     }
     

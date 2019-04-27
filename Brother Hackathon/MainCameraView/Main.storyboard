@@ -54,7 +54,7 @@
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <connections>
-                                                    <segue destination="20N-i0-p2u" kind="show" id="gLV-m1-fk8"/>
+                                                    <segue destination="20N-i0-p2u" kind="show" identifier="SeguePrintFoodTableView" id="gLV-m1-fk8"/>
                                                 </connections>
                                             </button>
                                         </subviews>
