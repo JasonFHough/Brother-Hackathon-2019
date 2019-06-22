@@ -22,10 +22,10 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="bottom" spacing="71" translatesAutoresizingMaskIntoConstraints="NO" id="7FQ-Eh-RVp">
-                                        <rect key="frame" x="16" y="629" width="343" height="141"/>
+                                        <rect key="frame" x="16" y="628.33333333333337" width="343" height="141.66666666666663"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Epg-DQ-4aZ" userLabel="Menu">
-                                                <rect key="frame" x="0.0" y="111" width="30" height="30"/>
+                                                <rect key="frame" x="0.0" y="111.66666666666663" width="30" height="30"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="30" id="Yyr-c6-YR6"/>
                                                     <constraint firstAttribute="height" constant="30" id="nKd-wO-pHS"/>
@@ -35,7 +35,7 @@
                                                 </state>
                                             </button>
                                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="duU-Q4-eNR">
-                                                <rect key="frame" x="101" y="0.0" width="141" height="141"/>
+                                                <rect key="frame" x="101" y="0.66666666666662877" width="141" height="141"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="duU-Q4-eNR" secondAttribute="height" multiplier="1:1" id="5OQ-OZ-AZ0"/>
                                                 </constraints>
@@ -45,7 +45,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A8U-cB-ain" userLabel="Print">
-                                                <rect key="frame" x="313" y="111" width="30" height="30"/>
+                                                <rect key="frame" x="313" y="111.66666666666663" width="30" height="30"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="30" id="9n6-UY-OZM"/>
                                                     <constraint firstAttribute="height" constant="30" id="GS4-4h-xPd"/>
@@ -59,12 +59,22 @@
                                             </button>
                                         </subviews>
                                     </stackView>
+                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please Wait" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" enabled="NO" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VC5-Kw-OSP">
+                                        <rect key="frame" x="83" y="283" width="208" height="50.333333333333314"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="42"/>
+                                        <color key="textColor" red="0.90196078430000004" green="0.59607843140000005" blue="0.5568627451" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="7FQ-Eh-RVp" firstAttribute="leading" secondItem="rQq-dt-3SG" secondAttribute="leading" constant="16" id="0a9-a9-K2l"/>
                                     <constraint firstAttribute="bottom" secondItem="7FQ-Eh-RVp" secondAttribute="bottom" constant="42" id="1iR-bp-nYB"/>
+                                    <constraint firstAttribute="trailing" secondItem="VC5-Kw-OSP" secondAttribute="trailing" constant="84" id="77l-r3-NqU"/>
+                                    <constraint firstItem="7FQ-Eh-RVp" firstAttribute="top" secondItem="VC5-Kw-OSP" secondAttribute="bottom" constant="295" id="Ar6-nD-cXs"/>
                                     <constraint firstAttribute="trailing" secondItem="7FQ-Eh-RVp" secondAttribute="trailing" constant="16" id="EiT-1R-Nn9"/>
+                                    <constraint firstItem="VC5-Kw-OSP" firstAttribute="leading" secondItem="rQq-dt-3SG" secondAttribute="leading" constant="83" id="LTp-p0-edC"/>
+                                    <constraint firstItem="VC5-Kw-OSP" firstAttribute="top" secondItem="rQq-dt-3SG" secondAttribute="top" constant="283" id="kXN-VG-xYp"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -82,6 +92,7 @@
                     <connections>
                         <outlet property="cameraView" destination="rQq-dt-3SG" id="PsN-OI-Dhj"/>
                         <outlet property="takePictureButton" destination="duU-Q4-eNR" id="bUP-qJ-FFc"/>
+                        <outlet property="waitLabel" destination="VC5-Kw-OSP" id="ewe-o5-3Ff"/>
                         <segue destination="kki-Ci-XZk" kind="presentation" identifier="DetectedImagesPopupSegue" id="xmH-Xw-tA4"/>
                     </connections>
                 </viewController>

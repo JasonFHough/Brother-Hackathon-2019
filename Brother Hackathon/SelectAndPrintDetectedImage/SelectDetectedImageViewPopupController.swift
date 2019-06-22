@@ -19,6 +19,8 @@ class SelectDetectedImageViewPopupController: UIViewController {
     
     @IBOutlet weak var confirmButton: UIButton!
     
+    var globalResponse: [String : String] = [:]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -62,52 +64,41 @@ class SelectDetectedImageViewPopupController: UIViewController {
     }
     
     func sendTrainingPOST(image64: String, label: String) {
-        var urlComponents = URLComponents()
-        urlComponents.scheme = "http"
-        urlComponents.host = "192.168.201.185"
-        urlComponents.port = 3000
-        urlComponents.path = "/train"
-        guard let url = urlComponents.url else { fatalError("Could not create URL from components") }
-        let post = TrainPost(image: "64string", label: "labelString")
-        
-        // Specify this request as being a POST method
-        var request = URLRequest(url: url)
-        request.httpMethod = "POST"
-        // Make sure that we include headers specifying that our request's HTTP body
-        // will be JSON encoded
-        var headers = request.allHTTPHeaderFields ?? [:]
-        headers["Content-Type"] = "application/json"
-        request.allHTTPHeaderFields = headers
-        
-        // Now let's encode out Post struct into JSON data...
-        let encoder = JSONEncoder()
-        do {
-            let jsonData = try encoder.encode(post)
-            // ... and set our request's HTTP body
-            request.httpBody = jsonData
-            print("jsonData: ", String(data: request.httpBody!, encoding: .utf8) ?? "no body data")
-        } catch {
-            print("error here")
-            print(error.localizedDescription)
-        }
-        
-        // Create and run a URLSession data task with our JSON encoded POST request
-        let config = URLSessionConfiguration.default
-        let session = URLSession(configuration: config)
-        let task = session.dataTask(with: request) { (responseData, response, responseError) in
-            guard responseError == nil else {
-                return
-            }
-            
-            // APIs usually respond with the data you just sent in your POST request
-            if let data = responseData, let utf8Representation = String(data: data, encoding: .utf8) {
-                print("response: ", utf8Representation)
-            } else {
-                print("no readable data received in response")
-            }
-        }
-        
-        task.resume()
+//        let json: [String: Any] = ["image": base64String]
+//
+//        let jsonData = try? JSONSerialization.data(withJSONObject: json)
+//
+//        // create post request
+//        //        http://httpbin.org/post
+//        //        http://192.168.201.185:3000/post
+//        let url = URL(string: "http://192.168.201.185:3000/training")!
+//        var request = URLRequest(url: url)
+//        request.httpMethod = "POST"
+//
+//        // insert json data to the request
+//        request.httpBody = jsonData
+//
+//        var headers = request.allHTTPHeaderFields ?? [:]
+//        headers["Content-Type"] = "application/json"
+//        request.allHTTPHeaderFields = headers
+//
+//        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+//
+//            guard let data = data, error == nil else {
+//                print(error?.localizedDescription ?? "No data")
+//                return
+//            }
+//            let responseJSON = try? JSONSerialization.jsonObject(with: data, options: [])
+//            if let responseJSON = responseJSON as? [String : String] {
+//                DispatchQueue.main.async {
+//                    print(responseJSON)
+//                    self.globalResponse = responseJSON
+//                    self.performSegue(withIdentifier: "DetectedImagesPopupSegue", sender: self)
+//                }
+//            }
+//        }
+//
+//        task.resume()
     }
     
     // MARK: - Navigation
@@ -121,12 +112,6 @@ class SelectDetectedImageViewPopupController: UIViewController {
             destination.confirmButton = confirmButton
         } else if let destination = (segue.destination as? PrintPopupViewController) {
             if segue.identifier == "PrintDetectedPopupViewSegue" {
-//                if imageLabel == nil {
-//                    print("hihioewgiowegwiehgoehwig")
-//                }
-//                if foodImage == nil {
-//                    print("bobobobobobo")
-//                }
                 destination.currentFoodItem = FoodItem(name: imageLabel!, picture: foodImage!)
             }
         }

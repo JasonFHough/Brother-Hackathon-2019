@@ -13,12 +13,14 @@ class CameraViewController: UIViewController, AVCapturePhotoCaptureDelegate {
     
     @IBOutlet weak var cameraView: UIView!
     @IBOutlet weak var takePictureButton: UIButton!
+    @IBOutlet weak var waitLabel: UILabel!
     
     var photoOutput: AVCapturePhotoOutput?
     var cameraSettings: AVCapturePhotoSettings?
     var takenPicture: UIImage?
     
-    var jsonResponse: Data?
+    var globalResponse: [String : String] = [:]
+    var globalBase64String: String = ""
     
     @IBAction func unwindToCameraView(segue:UIStoryboardSegue) { }
     
@@ -39,6 +41,8 @@ class CameraViewController: UIViewController, AVCapturePhotoCaptureDelegate {
         let swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(respondToSwipeGesture))
         swipeLeft.direction = .left
         self.view.addGestureRecognizer(swipeLeft)
+        
+        UserDefaults.standard.setValue(false, forKey:"_UIConstraintBasedLayoutLogUnsatisfiable")
     }
     
     @objc func respondToSwipeGesture(gesture: UIGestureRecognizer) {
@@ -55,7 +59,7 @@ class CameraViewController: UIViewController, AVCapturePhotoCaptureDelegate {
     func setupCamera() {
         // Create capture session
         let captureSession = AVCaptureSession()
-        captureSession.sessionPreset = .photo
+        captureSession.sessionPreset = .high
         
         // Get device's back camera input
         guard let captureDevice = AVCaptureDevice.default(for: .video) else { return }
@@ -92,56 +96,110 @@ class CameraViewController: UIViewController, AVCapturePhotoCaptureDelegate {
         photoOutput?.capturePhoto(with: settings, delegate: self)
     }
     
-    func sendClassifyPOST(_ base64String: String) {
-        var urlComponents = URLComponents()
-        urlComponents.scheme = "http"
-        urlComponents.host = "192.168.201.185"
-        urlComponents.port = 3000
-        urlComponents.path = "/classify"
-        guard let url = urlComponents.url else { fatalError("Could not create URL from components") }
-        let post = DetectPost(image: "john")
+    func resizeImage (image: UIImage, targetSize: CGSize) -> UIImage {
+        let size = image.size
         
-        // Specify this request as being a POST method
+        let widthRatio  = targetSize.width  / image.size.width
+        let heightRatio = targetSize.height / image.size.height
+        
+        // Figure out what our orientation is, and use that to form the rectangle
+        var newSize: CGSize
+        if(widthRatio > heightRatio) {
+            newSize = CGSize(width: size.width * heightRatio, height: size.height * heightRatio)
+        } else {
+            newSize = CGSize(width: size.width * widthRatio,  height: size.height * widthRatio)
+        }
+        
+        // This is the rect that we've calculated out and this is what is actually used below
+        let rect = CGRect(x: 0, y: 0, width: newSize.width, height: newSize.height)
+        
+        // Actually do the resizing to the rect using the ImageContext stuff
+        UIGraphicsBeginImageContextWithOptions(newSize, false, 1.0)
+        image.draw(in: rect)
+        let newImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        return newImage!
+    }
+    
+    func sendUploadPOST(_ base64String: String) {
+        waitLabel.isEnabled = true
+        waitLabel.isHidden = false
+        takePictureButton.isEnabled = false
+        
+        let json: [String: Any] = ["image": base64String]
+        
+        let jsonData = try? JSONSerialization.data(withJSONObject: json)
+        
+        // create post request
+        //        http://httpbin.org/post
+        //        http://192.168.201.185:3000/post
+        let url = URL(string: "http://192.168.201.185:3000/upload")!
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
-        // Make sure that we include headers specifying that our request's HTTP body
-        // will be JSON encoded
+        
+        // insert json data to the request
+        request.httpBody = jsonData
+        
         var headers = request.allHTTPHeaderFields ?? [:]
         headers["Content-Type"] = "application/json"
         request.allHTTPHeaderFields = headers
         
-        // Now let's encode out Post struct into JSON data...
-        let encoder = JSONEncoder()
-        do {
-            let jsonData = try encoder.encode(post)
-            // ... and set our request's HTTP body
-            request.httpBody = jsonData
-            print("jsonData: ", String(data: request.httpBody!, encoding: .utf8) ?? "no body data")
-        } catch {
-            print("error here")
-            print(error.localizedDescription)
-        }
-        
-        // Create and run a URLSession data task with our JSON encoded POST request
-        let config = URLSessionConfiguration.default
-        let session = URLSession(configuration: config)
-        let task = session.dataTask(with: request) { (responseData, response, responseError) in
-            guard responseError == nil else {
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            
+            guard let data = data, error == nil else {
+                print(error?.localizedDescription ?? "No data")
                 return
             }
-            
-            // APIs usually respond with the data you just sent in your POST request
-            if let data = responseData, let utf8Representation = String(data: data, encoding: .utf8) {
-                print("response: ", utf8Representation)
-                self.jsonResponse = data
-            } else {
-                print("no readable data received in response")
+            let responseJSON = try? JSONSerialization.jsonObject(with: data, options: [])
+            if let responseJSON = responseJSON as? [String : String] {
             }
         }
         
         task.resume()
         
-        performSegue(withIdentifier: "DetectedImagesPopupSegue", sender: self)
+        sendClassifyPOST(globalBase64String)
+    }
+    
+    func sendClassifyPOST(_ base64String: String) {
+        let json: [String: Any] = ["image": base64String]
+        
+        let jsonData = try? JSONSerialization.data(withJSONObject: json)
+        
+        // create post request
+//        http://192.168.201.185:3000/post
+        let url = URL(string: "http://192.168.201.185:3000/classify")!
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        
+        // insert json data to the request
+        request.httpBody = jsonData
+        
+        var headers = request.allHTTPHeaderFields ?? [:]
+        headers["Content-Type"] = "application/json"
+        request.allHTTPHeaderFields = headers
+        
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            
+            guard let data = data, error == nil else {
+                print(error?.localizedDescription ?? "No data")
+                return
+            }
+            let responseJSON = try? JSONSerialization.jsonObject(with: data, options: [])
+            if let responseJSON = responseJSON as? [String : String] {
+                DispatchQueue.main.async {
+                    print(responseJSON)
+                    self.globalResponse = responseJSON
+                    self.waitLabel.isEnabled = false
+                    self.waitLabel.isHidden = true
+                    self.takePictureButton.isEnabled = true
+                    self.performSegue(withIdentifier: "DetectedImagesPopupSegue", sender: self)
+                }
+            }
+        }
+        
+        task.resume()
+        
     }
     
     // ---- AVCapturePhotoCaptureDelegate ----
@@ -149,9 +207,11 @@ class CameraViewController: UIViewController, AVCapturePhotoCaptureDelegate {
     func photoOutput(_ output: AVCapturePhotoOutput, didFinishProcessingPhoto photo: AVCapturePhoto, error: Error?) {
         if let imageData = photo.fileDataRepresentation() {
             takenPicture = UIImage(data: imageData)
+            takenPicture = resizeImage(image: takenPicture!, targetSize: CGSize(width: 224, height: 224))
             
-            let base64String = imageData.base64EncodedString()
-            sendClassifyPOST(base64String)
+            globalBase64String = imageData.base64EncodedString()
+//            sendUploadPOST(globalBase64String)
+            performSegue(withIdentifier: "DetectedImagesPopupSegue", sender: self)
         }
     }
     
@@ -159,14 +219,11 @@ class CameraViewController: UIViewController, AVCapturePhotoCaptureDelegate {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destination = segue.destination as? SelectDetectedImageViewPopupController {
-    //        guard let jsonData = jsonResponse else { return }
-    //
-    //        let decoder = JSONDecoder()
-    //        let aValue = try! decoder.decode(DetectPost.self, from: jsonData)
-    //
-    //        print("stuff is here: \(aValue.image)")
-            destination.image64String = "ABCDEFGHIJK"
-            destination.imageLabel = "Temporary Label"
+//            destination.image64String = globalBase64String
+//            destination.imageLabel = globalResponse.first?.value
+//            destination.foodImage = takenPicture
+            destination.image64String = globalBase64String
+            destination.imageLabel = "Rhonda and Daron"
             destination.foodImage = takenPicture
         }
     }

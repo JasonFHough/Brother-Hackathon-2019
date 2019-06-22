@@ -27,8 +27,17 @@ struct FoodItem {
     let picture: UIImage
 }
 
+struct ResponseObject: Codable {
+    let data: [DetectPost]
+}
+
 struct DetectPost: Codable {
-    let image: String
+    let image: String   // Sending the base64String
+    
+    //Custom Keys
+    enum CodingKeys: String, CodingKey {
+        case image = "a"
+    }
 }
 
 struct TrainPost: Codable {
